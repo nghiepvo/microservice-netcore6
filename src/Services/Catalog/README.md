@@ -46,4 +46,13 @@ Generate tasks.json and launch.json for run or debug.
         ]
         ```
 
-- Setting: 
+- Document:  
+| Method     | URL                                             | User case                        |
+| ---------- | ----------------------------------------------- | -------------------------------- |
+| **GET**    | api/v1/Catalog                                  | List of Product and Categories   |
+| **GET**    | api/v1/Catalog{id}                              | Get Product with product Id      |
+| **GET**    | api/v1/Catalog/GetProductsByCategory/{category} | Get Products with Category       |
+| **POST**   | api/v1/Catalog                                  | Create new a Product             |
+| **PUST**   | api/v1/Catalog                                  | Update a Product with product Id |
+| **DELETE** | api/v1/Catalog                                  | Delete a Product with product Id |
+
