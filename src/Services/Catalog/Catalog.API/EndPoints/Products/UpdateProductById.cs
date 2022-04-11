@@ -4,7 +4,7 @@ using Catalog.API.Domain;
 
 namespace Catalog.API.EndPoints.Products;
 
-public class UpdateProductById : Endpoint<Product, BooleanResponse>
+public class UpdateProductById : Endpoint<Product, TypeResponse<bool>>
 {
     private readonly IProductService _productService;
 
@@ -22,6 +22,6 @@ public class UpdateProductById : Endpoint<Product, BooleanResponse>
 
     public override async Task HandleAsync(Product request, CancellationToken ct)
     {
-        await SendAsync(new BooleanResponse { Body = await _productService.UpdateProductAsync(request, ct)}, cancellation: ct);
+        await SendAsync(new TypeResponse<bool> { Body = await _productService.UpdateProductAsync(request, ct)}, cancellation: ct);
     }
 }
