@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="FastEndpoints" Version="4.0.0" />
+    <PackageReference Include="FastEndpoints.Swagger" Version="4.0.0" />
+    <PackageReference Include="MongoDB.Entities" Version="20.26.3" />
   </ItemGroup>
 
 </Project>

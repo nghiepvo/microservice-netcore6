@@ -1,41 +1,44 @@
-var builder = WebApplication.CreateBuilder(args);
+global using FastEndpoints;
+using FastEndpoints.Swagger;
+using Catalog.API.Infrastructures.MongoDB;
+using Catalog.API.Applications;
+using Catalog.API.EndPoints;
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+var builder = WebApplication.CreateBuilder();
+
+builder.Services.AddFastEndpoints();
+builder.Services.AddSwaggerDoc(settings =>
+{
+    settings.DocumentName = EndPointConfig.Version2Str;
+    settings.Title = EndPointConfig.APITitle;
+    settings.Version = EndPointConfig.Version2Str;
+}, maxEndpointVersion: EndPointConfig.Version2)
+.AddSwaggerDoc(settings =>
+{
+    settings.DocumentName = EndPointConfig.Version1Str;
+    settings.Title = EndPointConfig.APITitle;
+    settings.Version = EndPointConfig.Version1Str;
+}, maxEndpointVersion: EndPointConfig.Version1);
+
+builder.Services.AddApplication();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
-var summaries = new[]
+app.UseFastEndpoints(config =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    config.RoutingOptions = o => o.Prefix = EndPointConfig.APIPrefix;
+    config.VersioningOptions = o =>
+    {
+        o.Prefix = EndPointConfig.VersionPrefix;
+        o.SuffixedVersion = false; 
+    };
+});
+app.UseOpenApi();
+app.UseSwaggerUi3(c => c.ConfigureDefaults());
+app.UseDefaultExceptionHandler();
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateTime.Now.AddDays(index),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+app.UseAuthorization();
+await app.UseMongoDB();
 
 app.Run();
-
-record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

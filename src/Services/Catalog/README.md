@@ -57,9 +57,7 @@ Generate tasks.json and launch.json for run or debug.
 | **PUST**   | api/v1/Catalog                                  | Update a Product with product Id |
 | **DELETE** | api/v1/Catalog                                  | Delete a Product with product Id |
 
-- Use Layered Archictecture
-  - Data Access Layer.
-  - Bussiness Logic Layer.
-  - Presentation Layer. 
+- Use DDD Archictecture
 - Library  
-  - MongoDB.Drive
+  - [Mongodb Entities](https://mongodb-entities.com/)
+  - [Fast Endpoints](https://fast-endpoints.com/)
