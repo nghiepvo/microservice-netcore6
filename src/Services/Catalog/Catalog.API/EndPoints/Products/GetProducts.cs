@@ -17,11 +17,9 @@ public class GetProducts : Endpoint<EmptyRequest, ListResponse<Product>>
     {
         Get(ProductRoutes.GetProducts);
         Version(1);
-        AllowAnonymous();
+        Permissions(Allow.ProductRead);
     }
 
     public override async Task HandleAsync(EmptyRequest req, CancellationToken ct)
-    {
-        await SendAsync(new ListResponse<Product> { Data = await _productService.GetProductsAsync(ct)}, cancellation: ct);
-    }
+        => await SendAsync(new ListResponse<Product> { Data = await _productService.GetProductsAsync(ct) }, cancellation: ct);
 }

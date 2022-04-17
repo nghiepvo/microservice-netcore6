@@ -9,4 +9,7 @@ public class EndPointConfig
     public static readonly string Version1Str = $"{VersionPrefix}{Version1}";
     public const int Version2 = 2;
     public static readonly string Version2Str = $"{VersionPrefix}{Version2}";
+    public const string TokenKey = "TokenKey";
+    public const string Username = "BaseAuthentication:Username";
+    public const string Password = "BaseAuthentication:Password";
 }

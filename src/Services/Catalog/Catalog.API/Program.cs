@@ -1,5 +1,7 @@
 global using FastEndpoints;
+global using FastEndpoints.Security;
 using FastEndpoints.Swagger;
+
 using Catalog.API.Infrastructures.MongoDB;
 using Catalog.API.Applications;
 using Catalog.API.EndPoints;
@@ -7,6 +9,7 @@ using Catalog.API.EndPoints;
 var builder = WebApplication.CreateBuilder();
 
 builder.Services.AddFastEndpoints();
+builder.Services.AddAuthenticationJWTBearer(builder.Configuration["TokenKey"]);
 builder.Services.AddSwaggerDoc(settings =>
 {
     settings.DocumentName = EndPointConfig.Version2Str;
@@ -23,7 +26,6 @@ builder.Services.AddSwaggerDoc(settings =>
 builder.Services.AddApplication();
 
 var app = builder.Build();
-
 
 app.UseFastEndpoints(config =>
 {

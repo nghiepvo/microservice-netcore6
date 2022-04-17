@@ -1,6 +1,5 @@
 using Catalog.API.Applications.Services;
 using Catalog.API.Commons;
-using Catalog.API.Domain;
 
 namespace Catalog.API.EndPoints.Products;
 
@@ -17,11 +16,9 @@ public class DeleteProductById : Endpoint<IdRequest<string>, TypeResponse<bool>>
     {
         Delete(ProductRoutes.DeleteProductById);
         Version(1);
-        AllowAnonymous();
+        Permissions(Allow.ProductDelete);
     }
 
     public override async Task HandleAsync(IdRequest<string> request, CancellationToken ct)
-    {
-        await SendAsync(new TypeResponse<bool> { Body = await _productService.DeleteProductAsync(request.Id, ct) }, cancellation: ct);
-    }
+        => await SendAsync(new TypeResponse<bool> { Body = await _productService.DeleteProductAsync(request.Id, ct) }, cancellation: ct);
 }

@@ -34,7 +34,7 @@ public class ProductService : IProductService
     {
         var updateResult = await _updateProduct
             .Match(m => m.Eq(p => p.ID, product.ID))
-            .ModifyExcept(m => new { }, product)
+            .ModifyWith(product)
             .ExecuteAsync(ct);
 
         return updateResult.IsAcknowledged
@@ -42,9 +42,16 @@ public class ProductService : IProductService
     }
     public async Task<bool> DeleteProductAsync(string id, CancellationToken ct)
     { 
-        var deleteResult = await DB.DeleteAsync<Product>(id, cancellation:ct);
+        var product = await DB.Find<Product>().OneAsync(id, ct);
 
-         return deleteResult.IsAcknowledged
+        if (product != null) 
+        {
+            var deleteResult = await product.DeleteAsync();
+
+            return deleteResult.IsAcknowledged
                 && deleteResult.DeletedCount > 0;
+        }
+
+        return false;
     }
 }

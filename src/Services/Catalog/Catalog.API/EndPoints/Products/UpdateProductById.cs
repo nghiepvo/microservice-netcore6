@@ -17,11 +17,9 @@ public class UpdateProductById : Endpoint<Product, TypeResponse<bool>>
     {
         Put(ProductRoutes.UpdateProductById);
         Version(1);
-        AllowAnonymous();
+        Permissions(Allow.ProductUpdate);
     }
 
     public override async Task HandleAsync(Product request, CancellationToken ct)
-    {
-        await SendAsync(new TypeResponse<bool> { Body = await _productService.UpdateProductAsync(request, ct)}, cancellation: ct);
-    }
+        => await SendAsync(new TypeResponse<bool> { Body = await _productService.UpdateProductAsync(request, ct)}, cancellation: ct);
 }

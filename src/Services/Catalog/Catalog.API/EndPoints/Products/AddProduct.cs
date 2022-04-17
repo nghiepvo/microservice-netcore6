@@ -4,6 +4,9 @@ using Catalog.API.Domain;
 
 namespace Catalog.API.EndPoints.Products;
 
+/// <summary>
+/// Add a Product
+/// </summary>
 public class AddProduct : Endpoint<Product, EmptyResponse>
 {
     private readonly IProductService _productService;
@@ -17,11 +20,9 @@ public class AddProduct : Endpoint<Product, EmptyResponse>
     {
         Post(ProductRoutes.AddProduct);
         Version(1);
-        AllowAnonymous();
+        Permissions(Allow.ProductCreate);
     }
 
     public override async Task HandleAsync(Product request, CancellationToken ct)
-    {
-        await _productService.CreateProductAsync(request, ct);
-    }
+        => await _productService.CreateProductAsync(request, ct);
 }
