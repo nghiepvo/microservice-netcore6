@@ -2,7 +2,7 @@ using Catalog.API.Commons;
 
 namespace Catalog.API.EndPoints.Authentication;
 
-public class AuthenticationEndPoint: Endpoint<AuthenticationRequest, AuthenticationResponse>
+public class AuthenticationEndPoint : Endpoint<AuthenticationRequest, AuthenticationResponse>
 {
     private const string Route = "Authentication";
     private readonly IConfiguration _configuration;
@@ -23,6 +23,13 @@ public class AuthenticationEndPoint: Endpoint<AuthenticationRequest, Authenticat
     {
         if (req.Username == _configuration[EndPointConfig.Username] && req.Password == _configuration[EndPointConfig.Password])
         {
+            var permissions = new[]
+            {
+                Allow.ProductCreate,
+                Allow.ProductRead,
+                Allow.ProductUpdate,
+                Allow.ProductDelete
+            };
             var expireDate = DateTime.UtcNow.AddDays(1);
             var jwtToken = JWTBearer.CreateToken(
                 signingKey: _configuration[EndPointConfig.TokenKey],
@@ -31,18 +38,13 @@ public class AuthenticationEndPoint: Endpoint<AuthenticationRequest, Authenticat
                 {
                     (nameof(AuthenticationRequest.Username), req.Username)
                 },
-                permissions: new[]
-                {
-                    Allow.ProductCreate,
-                    Allow.ProductRead,
-                    Allow.ProductUpdate,
-                    Allow.ProductDelete
-                });
+                permissions: permissions);
 
             await SendAsync(new AuthenticationResponse
             {
                 ExpiryDate = expireDate,
                 JWTToken = jwtToken,
+                Permissions = permissions
             });
         }
         else

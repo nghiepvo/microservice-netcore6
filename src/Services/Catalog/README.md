@@ -60,4 +60,7 @@ Generate tasks.json and launch.json for run or debug.
 - Use DDD Archictecture
 - Library  
   - [Mongodb Entities](https://mongodb-entities.com/)
-  - [Fast Endpoints](https://fast-endpoints.com/)
+  - [Fast Endpoints](https://fast-endpoints.com/)  
+- Container:  
+  *Note: This image will be build on linux.*
+  > docker build --rm --pull -f "/src/Services/Catalog/Catalog.API/Dockerfile" --label "com.microsoft.service=catalogapi" -t "catalogapi:latest" "./" 

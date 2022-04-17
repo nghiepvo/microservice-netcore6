@@ -1,0 +1,28 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  catalog.db:
+    image: mongo
+    container_name: "catalog.db"
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongo_data:/data/db"
+
+  catalog.api:
+    image: catalogapi
+    build:
+      context: .
+      dockerfile: "src/Services/Catalog/Catalog.API/Dockerfile"
+    container_name: "catalog.api"
+    ports:
+      - "5000:5000"
+    environment:
+      - "DatabaseSettings:ConnectionString=mongodb://catalog.db:27017"
+    depends_on:
+      - "catalog.db"
+volumes:
+  mongo_data:

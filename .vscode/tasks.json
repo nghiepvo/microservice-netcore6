@@ -51,5 +51,90 @@
             },
             "problemMatcher": "$msCompile"
         },
+        {
+            "type": "docker-build",
+            "label": "Docker build Catalog API debug",
+            "group": "build",
+            "dependsOn": [
+                "build"
+            ],
+            "dockerBuild": {
+                "tag": "catalogapi:dev",
+                "target": "base",
+                "dockerfile": "${workspaceFolder}/src/Services/Catalog/Catalog.API/Dockerfile",
+                "context": "${workspaceFolder}",
+                "pull": true
+            },
+            "netCore": {
+                "appProject": "${workspaceFolder}/src/Services/Catalog/Catalog.API/Catalog.API.csproj"
+            }
+        },
+        {
+            "type": "docker-build",
+            "label": "Docker build Catalog API release",
+            "group": "build",
+            "dependsOn": [
+                "build"
+            ],
+            "dockerBuild": {
+                "tag": "catalogapi:latest",
+                "dockerfile": "${workspaceFolder}/src/Services/Catalog/Catalog.API/Dockerfile",
+                "context": "${workspaceFolder}",
+                "pull": true
+            },
+            "netCore": {
+                "appProject": "${workspaceFolder}/src/Services/Catalog/Catalog.API/Catalog.API.csproj"
+            }
+        },
+        {
+            "label": "Docker Compose Debug Up",
+            "type": "shell",
+            "group": "build",
+            "command": "docker-compose -f docker-compose.yml -f docker-compose.debug.yml up -d --build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Docker Compose Debug Up without build",
+            "type": "shell",
+            "group": "build",
+            "command": "docker-compose -f docker-compose.yml -f docker-compose.debug.yml up -d",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Docker Compose Debug Down",
+            "type": "shell",
+            "group": "build",
+            "command": "docker-compose -f docker-compose.yml -f docker-compose.debug.yml down",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Docker Compose Catalog Development Up",
+            "type": "shell",
+            "group": "build",
+            "command": "docker-compose -f ${workspaceFolder}/src/Services/Catalog/Catalog.API/docker-compose.catalog.yml up -d",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Docker Compose Catalog Development Down",
+            "type": "shell",
+            "group": "build",
+            "command": "docker-compose -f ${workspaceFolder}/src/Services/Catalog/Catalog.API/docker-compose.catalog.yml down",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
     ]
 }
