@@ -27,20 +27,26 @@ builder.Services.AddApplication();
 
 var app = builder.Build();
 
+app.UseDefaultExceptionHandler();
+
+app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.UseFastEndpoints(config =>
 {
     config.RoutingOptions = o => o.Prefix = EndPointConfig.APIPrefix;
     config.VersioningOptions = o =>
     {
         o.Prefix = EndPointConfig.VersionPrefix;
-        o.SuffixedVersion = false; 
+        o.SuffixedVersion = false;
     };
 });
+
 app.UseOpenApi();
 app.UseSwaggerUi3(c => c.ConfigureDefaults());
-app.UseDefaultExceptionHandler();
 
-app.UseAuthorization();
 await app.UseMongoDB();
 
 app.Run();

@@ -43,5 +43,5 @@ public class AuthenticationResponse
 {
     public string JWTToken { get; set; } = null!;
     public DateTime ExpiryDate { get; set; }
-    public IEnumerable<string> Permissions { get; set; } = null!;
+    public IList<string> Permissions { get; set; } = null!;
 }

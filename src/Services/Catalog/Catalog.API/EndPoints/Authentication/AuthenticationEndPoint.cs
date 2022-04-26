@@ -4,7 +4,7 @@ namespace Catalog.API.EndPoints.Authentication;
 
 public class AuthenticationEndPoint : Endpoint<AuthenticationRequest, AuthenticationResponse>
 {
-    private const string Route = "Authentication";
+    public const string Route = "Authentication";
     private readonly IConfiguration _configuration;
 
     public AuthenticationEndPoint(IConfiguration configuration)

@@ -20,6 +20,6 @@ public class GetProductById : Endpoint<IdRequest<string>, Product>
         Permissions(Allow.ProductRead);
     }
 
-    public override async Task HandleAsync(IdRequest<string> request, CancellationToken ct) 
+    public override async Task HandleAsync(IdRequest<string> request, CancellationToken ct)
         => await SendAsync(await _productService.GetProductAsync(request.Id, ct), cancellation: ct);
 }

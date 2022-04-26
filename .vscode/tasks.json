@@ -120,7 +120,7 @@
             "label": "Docker Compose Catalog Development Up",
             "type": "shell",
             "group": "build",
-            "command": "docker-compose -f ${workspaceFolder}/src/Services/Catalog/Catalog.API/docker-compose.catalog.yml up -d",
+            "command": "docker-compose -f ${workspaceFolder}/src/Services/Catalog/docker-compose.catalog.yml up -d",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
@@ -130,10 +130,50 @@
             "label": "Docker Compose Catalog Development Down",
             "type": "shell",
             "group": "build",
-            "command": "docker-compose -f ${workspaceFolder}/src/Services/Catalog/Catalog.API/docker-compose.catalog.yml down",
+            "command": "docker-compose -f ${workspaceFolder}/src/Services/Catalog/docker-compose.catalog.yml down",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
+            }
+        },
+        {
+            "label": "Catalog Test with debugger",
+            "type": "process",
+            "isBackground": true,
+            "command": "dotnet",
+            "args": [
+                "test"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/src/Services/Catalog/Catalog.API.Test",
+                "env": {
+                    "VSTEST_HOST_DEBUG": "1"
+                },
+            },
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Catalog Test coverage",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "/p:CollectCoverage=true",
+                "/p:CoverletOutputFormat=lcov",
+                "/p:CoverletOutput=./lcov.info",
+                "${workspaceFolder}/src/Services/Catalog/Catalog.API.Test/Catalog.API.Test.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "test",
+                "isDefault": true
             }
         }
     ]

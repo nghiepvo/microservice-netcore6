@@ -19,5 +19,5 @@ public static class MongoDBSetting
         await DB.InitAsync(databaseName, MongoClientSettings.FromConnectionString(connectionString));
 
         await DB.MigrateAsync();
-    } 
+    }
 }

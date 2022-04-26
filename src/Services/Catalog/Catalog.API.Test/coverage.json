@@ -1,0 +1,760 @@
+{
+  "Catalog.API.dll": {
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/Program.cs": {
+      "Program/<<Main>$>d__0": {
+        "System.Void Program/<<Main>$>d__0::MoveNext()": {
+          "Lines": {
+            "9": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "28": 0,
+            "30": 0,
+            "32": 0,
+            "34": 0,
+            "35": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "47": 0,
+            "48": 0,
+            "50": 0,
+            "52": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/Infrastructures/MongoDB/MongoDBSetting.cs": {
+      "Catalog.API.Infrastructures.MongoDB.MongoDBSetting/<UseMongoDB>d__0": {
+        "System.Void Catalog.API.Infrastructures.MongoDB.MongoDBSetting/<UseMongoDB>d__0::MoveNext()": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "19": 0,
+            "21": 0,
+            "22": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/Infrastructures/MongoDB/Migrations/_0001_Inital_Product.cs": {
+      "Catalog.API.Infrastructures.MongoDB.Migrations._0001_Inital_Product/<UpgradeAsync>d__0": {
+        "System.Void Catalog.API.Infrastructures.MongoDB.Migrations._0001_Inital_Product/<UpgradeAsync>d__0::MoveNext()": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/EndPointConfig.cs": {
+      "Catalog.API.EndPoints.EndPointConfig": {
+        "System.Void Catalog.API.EndPoints.EndPointConfig::.cctor()": {
+          "Lines": {
+            "9": 0,
+            "11": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/MessagesConfig.cs": {
+      "Catalog.API.EndPoints.MessagesConfig": {
+        "System.Void Catalog.API.EndPoints.MessagesConfig::.cctor()": {
+          "Lines": {
+            "5": 1,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/Products/AddProduct.cs": {
+      "Catalog.API.EndPoints.Products.AddProduct": {
+        "System.Void Catalog.API.EndPoints.Products.AddProduct::Configure()": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        },
+        "System.Void Catalog.API.EndPoints.Products.AddProduct::.ctor(Catalog.API.Applications.Services.IProductService)": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.EndPoints.Products.AddProduct/<HandleAsync>d__3": {
+        "System.Void Catalog.API.EndPoints.Products.AddProduct/<HandleAsync>d__3::MoveNext()": {
+          "Lines": {
+            "27": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/Products/DeleteProductById.cs": {
+      "Catalog.API.EndPoints.Products.DeleteProductById": {
+        "System.Void Catalog.API.EndPoints.Products.DeleteProductById::Configure()": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.Void Catalog.API.EndPoints.Products.DeleteProductById::.ctor(Catalog.API.Applications.Services.IProductService)": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.EndPoints.Products.DeleteProductById/<HandleAsync>d__3": {
+        "System.Void Catalog.API.EndPoints.Products.DeleteProductById/<HandleAsync>d__3::MoveNext()": {
+          "Lines": {
+            "23": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/Products/GetProductById.cs": {
+      "Catalog.API.EndPoints.Products.GetProductById": {
+        "System.Void Catalog.API.EndPoints.Products.GetProductById::Configure()": {
+          "Lines": {
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Void Catalog.API.EndPoints.Products.GetProductById::.ctor(Catalog.API.Applications.Services.IProductService)": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.EndPoints.Products.GetProductById/<HandleAsync>d__3": {
+        "System.Void Catalog.API.EndPoints.Products.GetProductById/<HandleAsync>d__3::MoveNext()": {
+          "Lines": {
+            "24": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/Products/GetProducts.cs": {
+      "Catalog.API.EndPoints.Products.GetProducts": {
+        "System.Void Catalog.API.EndPoints.Products.GetProducts::Configure()": {
+          "Lines": {
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Void Catalog.API.EndPoints.Products.GetProducts::.ctor(Catalog.API.Applications.Services.IProductService)": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.EndPoints.Products.GetProducts/<HandleAsync>d__3": {
+        "System.Void Catalog.API.EndPoints.Products.GetProducts/<HandleAsync>d__3::MoveNext()": {
+          "Lines": {
+            "24": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/Products/ProductRoutes.cs": {
+      "Catalog.API.EndPoints.Products.ProductRoutes": {
+        "System.Void Catalog.API.EndPoints.Products.ProductRoutes::.cctor()": {
+          "Lines": {
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/Products/UpdateProductById.cs": {
+      "Catalog.API.EndPoints.Products.UpdateProductById": {
+        "System.Void Catalog.API.EndPoints.Products.UpdateProductById::Configure()": {
+          "Lines": {
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Void Catalog.API.EndPoints.Products.UpdateProductById::.ctor(Catalog.API.Applications.Services.IProductService)": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.EndPoints.Products.UpdateProductById/<HandleAsync>d__3": {
+        "System.Void Catalog.API.EndPoints.Products.UpdateProductById/<HandleAsync>d__3::MoveNext()": {
+          "Lines": {
+            "24": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/Authentication/AuthenticationEndPoint.cs": {
+      "Catalog.API.EndPoints.Authentication.AuthenticationEndPoint": {
+        "System.Void Catalog.API.EndPoints.Authentication.AuthenticationEndPoint::Configure()": {
+          "Lines": {
+            "16": 2,
+            "17": 2,
+            "18": 2,
+            "19": 2,
+            "20": 2
+          },
+          "Branches": []
+        },
+        "System.Void Catalog.API.EndPoints.Authentication.AuthenticationEndPoint::.ctor(Microsoft.Extensions.Configuration.IConfiguration)": {
+          "Lines": {
+            "10": 2,
+            "11": 2,
+            "12": 2,
+            "13": 2
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.EndPoints.Authentication.AuthenticationEndPoint/<HandleAsync>d__4": {
+        "System.Void Catalog.API.EndPoints.Authentication.AuthenticationEndPoint/<HandleAsync>d__4::MoveNext()": {
+          "Lines": {
+            "23": 2,
+            "24": 2,
+            "25": 1,
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "51": 1,
+            "52": 1,
+            "53": 0,
+            "54": 1
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 24,
+              "Offset": 55,
+              "EndOffset": 96,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 24,
+              "Offset": 99,
+              "EndOffset": 104,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 24,
+              "Offset": 99,
+              "EndOffset": 444,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/Authentication/Models.cs": {
+      "Catalog.API.EndPoints.Authentication.AuthenticationRequest": {
+        "System.String Catalog.API.EndPoints.Authentication.AuthenticationRequest::get_Username()": {
+          "Lines": {
+            "10": 8
+          },
+          "Branches": []
+        },
+        "System.String Catalog.API.EndPoints.Authentication.AuthenticationRequest::get_Password()": {
+          "Lines": {
+            "11": 6
+          },
+          "Branches": []
+        },
+        "System.String Catalog.API.EndPoints.Authentication.AuthenticationRequest::get_SecretKey()": {
+          "Lines": {
+            "12": 2
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.EndPoints.Authentication.AuthenticationValidator": {
+        "System.Void Catalog.API.EndPoints.Authentication.AuthenticationValidator::.ctor(Microsoft.Extensions.Configuration.IConfiguration)": {
+          "Lines": {
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 19,
+              "Offset": 39,
+              "EndOffset": 52,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 38,
+              "Offset": 127,
+              "EndOffset": 131,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 38,
+              "Offset": 127,
+              "EndOffset": 148,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Catalog.API.EndPoints.Authentication.AuthenticationResponse": {
+        "System.String Catalog.API.EndPoints.Authentication.AuthenticationResponse::get_JWTToken()": {
+          "Lines": {
+            "44": 3
+          },
+          "Branches": []
+        },
+        "System.DateTime Catalog.API.EndPoints.Authentication.AuthenticationResponse::get_ExpiryDate()": {
+          "Lines": {
+            "45": 2
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IList`1<System.String> Catalog.API.EndPoints.Authentication.AuthenticationResponse::get_Permissions()": {
+          "Lines": {
+            "46": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/Domain/Product.cs": {
+      "Catalog.API.Domain.Product": {
+        "System.String Catalog.API.Domain.Product::get_Name()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String Catalog.API.Domain.Product::get_Category()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.String Catalog.API.Domain.Product::get_Summary()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.String Catalog.API.Domain.Product::get_Description()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.String Catalog.API.Domain.Product::get_ImageFile()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Catalog.API.Domain.Product::get_Price()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/Commons/IdRequest.cs": {
+      "Catalog.API.Commons.IdRequest`1": {
+        "T Catalog.API.Commons.IdRequest`1::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/Commons/ListResponse.cs": {
+      "Catalog.API.Commons.ListResponse`1": {
+        "System.Collections.Generic.IEnumerable`1<T> Catalog.API.Commons.ListResponse`1::get_Data()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/Commons/RouteExtension.cs": {
+      "Catalog.API.Commons.RouteExtension": {
+        "System.String Catalog.API.Commons.RouteExtension::ById(System.String)": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/Commons/TypeResponse.cs": {
+      "Catalog.API.Commons.TypeResponse`1": {
+        "T Catalog.API.Commons.TypeResponse`1::get_Body()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/Applications/DependencyInjection.cs": {
+      "Catalog.API.Applications.DependencyInjection": {
+        "Microsoft.Extensions.DependencyInjection.IServiceCollection Catalog.API.Applications.DependencyInjection::AddApplication(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/Applications/Services/ProductService.cs": {
+      "Catalog.API.Applications.Services.ProductService": {
+        "System.Void Catalog.API.Applications.Services.ProductService::.ctor()": {
+          "Lines": {
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.Applications.Services.ProductService/<>c__DisplayClass5_0": {
+        "MongoDB.Driver.FilterDefinition`1<Catalog.API.Domain.Product> Catalog.API.Applications.Services.ProductService/<>c__DisplayClass5_0::<GetProductByNameAsync>b__0(MongoDB.Driver.FilterDefinitionBuilder`1<Catalog.API.Domain.Product>)": {
+          "Lines": {
+            "30": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.Applications.Services.ProductService/<>c__DisplayClass6_0": {
+        "MongoDB.Driver.FilterDefinition`1<Catalog.API.Domain.Product> Catalog.API.Applications.Services.ProductService/<>c__DisplayClass6_0::<GetProductByCategoryAsync>b__0(MongoDB.Driver.FilterDefinitionBuilder`1<Catalog.API.Domain.Product>)": {
+          "Lines": {
+            "31": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.Applications.Services.ProductService/<>c__DisplayClass8_0": {
+        "MongoDB.Driver.FilterDefinition`1<Catalog.API.Domain.Product> Catalog.API.Applications.Services.ProductService/<>c__DisplayClass8_0::<UpdateProductAsync>b__0(MongoDB.Driver.FilterDefinitionBuilder`1<Catalog.API.Domain.Product>)": {
+          "Lines": {
+            "36": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.Applications.Services.ProductService/<CreateProductAsync>d__7": {
+        "System.Void Catalog.API.Applications.Services.ProductService/<CreateProductAsync>d__7::MoveNext()": {
+          "Lines": {
+            "32": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.Applications.Services.ProductService/<DeleteProductAsync>d__9": {
+        "System.Void Catalog.API.Applications.Services.ProductService/<DeleteProductAsync>d__9::MoveNext()": {
+          "Lines": {
+            "44": 0,
+            "45": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "51": 0,
+            "52": 0,
+            "55": 0,
+            "56": 0
+          },
+          "Branches": [
+            {
+              "Line": 47,
+              "Offset": 176,
+              "EndOffset": 181,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 51,
+              "Offset": 332,
+              "EndOffset": 334,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 51,
+              "Offset": 332,
+              "EndOffset": 351,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 176,
+              "EndOffset": 355,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Catalog.API.Applications.Services.ProductService/<GetProductAsync>d__4": {
+        "System.Void Catalog.API.Applications.Services.ProductService/<GetProductAsync>d__4::MoveNext()": {
+          "Lines": {
+            "29": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.Applications.Services.ProductService/<GetProductsAsync>d__3": {
+        "System.Void Catalog.API.Applications.Services.ProductService/<GetProductsAsync>d__3::MoveNext()": {
+          "Lines": {
+            "28": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.Applications.Services.ProductService/<UpdateProductAsync>d__8": {
+        "System.Void Catalog.API.Applications.Services.ProductService/<UpdateProductAsync>d__8::MoveNext()": {
+          "Lines": {
+            "34": 0,
+            "35": 0,
+            "37": 0,
+            "38": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 231,
+              "EndOffset": 233,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 231,
+              "EndOffset": 250,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

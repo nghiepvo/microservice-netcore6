@@ -1,4 +1,10 @@
-# Catalog API 
+# Catalog API  
+*On Windows, please use git bash because the all commend line below which was developed on linux environment and VSCode. **I still don't verify on Windows yet. :D**
+And update hosts file with content below:*  
+```
+127.0.0.1       catalog.db
+```  
+*For run Catalog.API project please run tasks (Ctr+Shift+B) > select **Docker Compose Catalog Development Up** and stop **Docker Compose Catalog Development Down***  
 
 ### Path: **microservice-sample > Services > Catalog > Catalog.API**  
 > mkdir Services && cd Services  
@@ -7,12 +13,14 @@
 > cd ../.. && dotnet sln add ./Services/Catalog/Catalog.API/Catalog.API.csproj  
 > cd Services/Catalog/Catalog.API  
 
-Generate tasks.json and launch.json for run or debug.
+- Generate tasks.json and launch.json for run or debug.  
+- Generate docker-compose file.  
+  *Look on task setting (.vscode/task.json) for build docker image. **Docker build Catalog API***  
 - Using Mongodb on docker.  
     > docker pull mongo  
     > docker run -d -p 27017:27017 --name shopping-mongo mongo  
     > docker logs -f shopping-mongo  
-    > docker exec -it shopping-mongo /bin/bash      
+    > docker exec -it shopping-mongo /bin/bash  
     - Mongo CLI:  
         > mongo  
         > show dbs  
@@ -24,7 +32,7 @@ Generate tasks.json and launch.json for run or debug.
         > show databases  
         > show collections  
         > db.Products.find({}).pretty()  
-    - Data: 
+    - Data:  
         ```json
         [
             {
@@ -44,8 +52,7 @@ Generate tasks.json and launch.json for run or debug.
                 "Price": 88.93
             }
         ]
-        ```
-
+        ```  
 - Document:  
 
 | Method     | URL                                             | User case                        |
@@ -57,10 +64,9 @@ Generate tasks.json and launch.json for run or debug.
 | **PUST**   | api/v1/Catalog                                  | Update a Product with product Id |
 | **DELETE** | api/v1/Catalog                                  | Delete a Product with product Id |
 
-- Use DDD Archictecture
+- Use DDD Archictecture  
 - Library  
-  - [Mongodb Entities](https://mongodb-entities.com/)
+  - [Mongodb Entities](https://mongodb-entities.com/)  
   - [Fast Endpoints](https://fast-endpoints.com/)  
-- Container:  
-  *Note: This image will be build on linux.*
-  > docker build --rm --pull -f "/src/Services/Catalog/Catalog.API/Dockerfile" --label "com.microsoft.service=catalogapi" -t "catalogapi:latest" "./" 
+- Test with MSTest.  
+> dotnet test /p:CollectCoverage=true  
