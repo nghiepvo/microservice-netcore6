@@ -7,7 +7,6 @@ using FakeItEasy;
 using FastEndpoints;
 using FastEndpoints.Validation;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Catalog.API.Test.UnitTest;
