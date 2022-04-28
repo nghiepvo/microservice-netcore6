@@ -11,10 +11,10 @@ using static Catalog.API.Test.IntegrationTest.Setup;
 namespace Catalog.API.Test.IntegrationTest;
 
 [TestClass]
-public class GetProductByIdIntegrationTest
+public class GetProductsIntegrationTest
 {
     [TestMethod]
-    public async Task Get1ProductById()
+    public async Task GetProductsSuccess()
     {
         var (resp, res) = await Client.GETAsync<GetProducts, ListResponse<Product>>();
 
