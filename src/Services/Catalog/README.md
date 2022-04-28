@@ -69,4 +69,7 @@ And update hosts file with content below:*
   - [Mongodb Entities](https://mongodb-entities.com/)  
   - [Fast Endpoints](https://fast-endpoints.com/)  
 - Test with MSTest.  
-> dotnet test /p:CollectCoverage=true  
+  *go to root folder for run catalog.db in docker-compose*  
+  > docker-compose -f docker-compose.yml -f docker-compose.debug.yml up -d catalog.db  
+  > cd src/Services/Catalog/Catalog.API.Test  
+  > dotnet test /p:CollectCoverage=true  

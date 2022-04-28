@@ -1,4 +1,4 @@
-# Microservice netcore6
+# Microservice netcore6  
 
 ### Solution structure: **microservice-sample**  
 
@@ -10,3 +10,14 @@
 ### Docker note for linux  
 > sudo usermod -aG docker nv  
 > sudo setfacl -m user:nv:rw /var/run/docker.sock  
+
+### Setting for VSCode  
+  Please look on .vscode folder for all.  
+
+### Testing note  
+  For setup with Integration test, you should fill the config below on project which is need to testing.  
+```xml
+<ItemGroup>
+    <InternalsVisibleTo Include="$(AssemblyName).Test" />
+</ItemGroup>
+```  
