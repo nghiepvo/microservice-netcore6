@@ -41,10 +41,10 @@ public class ProductService : IProductService
                     && updateResult.ModifiedCount > 0;
     }
     public async Task<bool> DeleteProductAsync(string id, CancellationToken ct)
-    { 
+    {
         var product = await DB.Find<Product>().OneAsync(id, ct);
 
-        if (product != null) 
+        if (product != null)
         {
             var deleteResult = await product.DeleteAsync();
 

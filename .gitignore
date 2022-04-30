@@ -351,3 +351,4 @@ MigrationBackup/
 
 # Test Ouput file
 lcov.info
+coverage.json
