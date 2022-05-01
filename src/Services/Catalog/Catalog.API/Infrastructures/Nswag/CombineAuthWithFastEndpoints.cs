@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NSwag;
@@ -9,6 +10,7 @@ using NSwag.Generation.Processors.Security;
 
 namespace Catalog.API.Infrastructures.Nswag;
 
+[ExcludeFromCodeCoverage]
 public static class CombineAuthWithFastEndpoints
 {
     public static void AddAuthController(this AspNetCoreOpenApiDocumentGeneratorSettings settings)
@@ -35,6 +37,7 @@ public static class CombineAuthWithFastEndpoints
     }
 }
 
+[ExcludeFromCodeCoverage]
 internal class OperationSecurityProcessor : IOperationProcessor
 {
     private readonly string schemeName;

@@ -4,9 +4,7 @@
       "Program/<<Main>$>d__0": {
         "System.Void Program/<<Main>$>d__0::MoveNext()": {
           "Lines": {
-            "9": 1,
             "11": 1,
-            "12": 1,
             "13": 1,
             "14": 1,
             "15": 1,
@@ -18,26 +16,37 @@
             "21": 1,
             "22": 1,
             "23": 1,
-            "24": 2,
+            "24": 1,
+            "25": 1,
             "26": 1,
+            "27": 1,
             "28": 1,
-            "30": 1,
+            "29": 1,
+            "30": 2,
             "32": 1,
-            "34": 1,
+            "33": 2,
             "35": 1,
             "37": 1,
-            "38": 1,
-            "39": 2,
-            "40": 1,
+            "39": 1,
             "41": 1,
             "42": 1,
             "43": 1,
-            "44": 2,
-            "45": 2,
-            "47": 1,
-            "48": 2,
+            "45": 1,
+            "46": 1,
+            "47": 2,
+            "48": 1,
+            "49": 1,
             "50": 1,
-            "52": 1
+            "51": 1,
+            "52": 2,
+            "53": 2,
+            "55": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 2,
+            "62": 1,
+            "64": 1
           },
           "Branches": []
         }
@@ -161,6 +170,20 @@
             "6": 1,
             "7": 1,
             "8": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/ModelBuilder.cs": {
+      "Catalog.API.EndPoints.ModelBuilder": {
+        "Microsoft.OData.Edm.IEdmModel Catalog.API.EndPoints.ModelBuilder::GetEdmModel()": {
+          "Lines": {
+            "10": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1
           },
           "Branches": []
         }
@@ -330,6 +353,29 @@
         "System.Void Catalog.API.EndPoints.Products.UpdateProductById/<HandleAsync>d__3::MoveNext()": {
           "Lines": {
             "24": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/Controllers/ProductsController.cs": {
+      "Catalog.API.EndPoints.Controllers.ProductsController": {
+        "System.Void Catalog.API.EndPoints.Controllers.ProductsController::.ctor(Catalog.API.Applications.Services.IProductService)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.EndPoints.Controllers.ProductsController/<Get>d__2": {
+        "System.Void Catalog.API.EndPoints.Controllers.ProductsController/<Get>d__2::MoveNext()": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0
           },
           "Branches": []
         }
@@ -586,6 +632,12 @@
         "System.Collections.Generic.IEnumerable`1<T> Catalog.API.Commons.ListResponse`1::get_Data()": {
           "Lines": {
             "7": 6
+          },
+          "Branches": []
+        },
+        "System.Int32 Catalog.API.Commons.ListResponse`1::get_Total()": {
+          "Lines": {
+            "8": 2
           },
           "Branches": []
         }

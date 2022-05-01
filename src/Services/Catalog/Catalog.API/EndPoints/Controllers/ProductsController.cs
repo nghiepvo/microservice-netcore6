@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.OData.Query;
 using Microsoft.AspNetCore.OData.Routing.Controllers;
 
 namespace Catalog.API.EndPoints.Controllers;
+
 public class ProductsController : ODataController
 {
     private readonly IProductService _productService;

@@ -11,9 +11,12 @@ namespace Catalog.API.Test.IntegrationTest;
 public static class Setup
 {
     private static readonly WebApplicationFactory<Program> factory = new();
+
     private const string AppSettingFile = "appsettings.Test.json";
+
     public static HttpClient Client { get; } = factory
-        .WithWebHostBuilder(b => b.ConfigureAppConfiguration((context, config) => {
+        .WithWebHostBuilder(b => b.ConfigureAppConfiguration((context, config) =>
+        {
             config.AddJsonFile(AppSettingFile);
         }))
         .CreateClient();

@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
 using NSwag;
@@ -6,6 +7,7 @@ using NSwag.Generation.Processors;
 using NSwag.Generation.Processors.Contexts;
 
 namespace Catalog.API.Infrastructures.Nswag;
+[ExcludeFromCodeCoverage]
 public class AddOdataQuery: IOperationProcessor
 {
     public bool Process(OperationProcessorContext context)
