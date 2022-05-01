@@ -5,6 +5,8 @@ using FastEndpoints.Swagger;
 using Catalog.API.Infrastructures.MongoDB;
 using Catalog.API.Applications;
 using Catalog.API.EndPoints;
+using Microsoft.AspNetCore.OData;
+using Catalog.API.Infrastructures.Nswag;
 
 var builder = WebApplication.CreateBuilder();
 
@@ -15,15 +17,20 @@ builder.Services.AddSwaggerDoc(settings =>
     settings.DocumentName = EndPointConfig.Version2Str;
     settings.Title = EndPointConfig.APITitle;
     settings.Version = EndPointConfig.Version2Str;
-}, maxEndpointVersion: EndPointConfig.Version2)
+    settings.AddAuthController();
+    settings.OperationProcessors.Add(new AddOdataQuery());
+}, maxEndpointVersion: EndPointConfig.Version2, addJWTBearerAuth: false)
 .AddSwaggerDoc(settings =>
 {
     settings.DocumentName = EndPointConfig.Version1Str;
     settings.Title = EndPointConfig.APITitle;
     settings.Version = EndPointConfig.Version1Str;
-}, maxEndpointVersion: EndPointConfig.Version1);
+    settings.AddAuthController();
+    settings.OperationProcessors.Add(new AddOdataQuery());
+}, maxEndpointVersion: EndPointConfig.Version1, addJWTBearerAuth: false);
 
 builder.Services.AddApplication();
+builder.Services.AddControllers().AddOData(opt => opt.EnableQueryFeatures().AddRouteComponents("odata", ModelBuilder.GetEdmModel()));
 
 var app = builder.Build();
 
@@ -33,6 +40,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapControllers().RequireAuthorization();
 
 app.UseFastEndpoints(config =>
 {
@@ -45,7 +53,11 @@ app.UseFastEndpoints(config =>
 });
 
 app.UseOpenApi();
-app.UseSwaggerUi3(c => c.ConfigureDefaults());
+
+app.UseSwaggerUi3(c =>
+{
+    c.ConfigureDefaults();
+});
 
 await app.UseMongoDB();
 
