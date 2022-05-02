@@ -20,8 +20,22 @@ public class ProductIntegrationTest
         var (resp, res) = await Client.GETAsync<GetProducts, ListResponse<Product>>();
 
         Assert.AreEqual(HttpStatusCode.OK, resp?.StatusCode);
+
         Assert.AreEqual(ProductData.Products.Length, res?.Data.Count());
     }
+
+    [TestMethod]
+    public async Task GetProductsByCategorySuccess()
+    {
+        var product = ProductData.Products.First();
+
+        var (resp, res) = await Client.GETAsync<GetProductByCategory, TypeRequest<string>, ListResponse<Product>>(new() { Payload = product.Category});
+
+        Assert.AreEqual(HttpStatusCode.OK, resp?.StatusCode);
+
+        Assert.AreEqual(ProductData.Products.Count(o=>o.Category.Equals(product.Category)), res?.Data.Count());
+    }
+
 
     [TestMethod]
     public async Task CRUDProductSuccess()
@@ -31,14 +45,12 @@ public class ProductIntegrationTest
         product.ID = Guid.NewGuid().ToString("N");
 
         // Add Product
-
         var respPOST = await Client.POSTAsync<AddProduct, Product>(product);
 
         Assert.AreEqual(HttpStatusCode.OK, respPOST?.StatusCode);
 
 
         // Read Product
-
         var (respGET, resGET) = await Client.GETAsync<GetProductById, IdRequest<string>, Product>(new() { Id = product.ID });
 
         Assert.AreEqual(HttpStatusCode.OK, respGET?.StatusCode);
@@ -56,6 +68,19 @@ public class ProductIntegrationTest
         var (respDELETE, resDLETE) = await Client.DELETEAsync<DeleteProductById, IdRequest<string>, TypeResponse<bool>>(new() { Id = product.ID});
 
         Assert.AreEqual(HttpStatusCode.OK, respDELETE?.StatusCode);
+
         Assert.IsTrue(resDLETE?.Body);
+    }
+
+    [TestMethod]
+    public async Task DeleteProductFail()
+    {
+        var id = Guid.NewGuid().ToString("N");
+
+       var (respDELETE, resDLETE) = await Client.DELETEAsync<DeleteProductById, IdRequest<string>, TypeResponse<bool>>(new() { Id = id});
+
+        Assert.AreEqual(HttpStatusCode.OK, respDELETE?.StatusCode);
+
+        Assert.IsFalse(resDLETE?.Body);
     }
 }

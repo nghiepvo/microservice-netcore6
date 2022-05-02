@@ -16,9 +16,6 @@ public class AuthenticationValidator : Validator<AuthenticationRequest>
 {
     public AuthenticationValidator(IConfiguration config)
     {
-        if (config is null)
-            throw new ArgumentNullException(nameof(config));
-
         When(x => string.IsNullOrEmpty(x.SecretKey), () =>
         {
             RuleFor(x => x.Username)

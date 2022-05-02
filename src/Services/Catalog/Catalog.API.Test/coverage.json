@@ -56,14 +56,30 @@
       "Catalog.API.Infrastructures.MongoDB.MongoDBSetting": {
         "Microsoft.Extensions.DependencyInjection.IServiceCollection Catalog.API.Infrastructures.MongoDB.MongoDBSetting::AddMongoDB(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
           "Lines": {
-            "25": 1,
-            "26": 1,
+            "27": 1,
             "28": 1,
-            "29": 1,
+            "30": 1,
             "31": 1,
             "33": 1,
             "35": 1,
-            "36": 1
+            "37": 1,
+            "38": 1
+          },
+          "Branches": []
+        },
+        "MongoDB.Driver.MongoClientSettings Catalog.API.Infrastructures.MongoDB.MongoDBSetting::GetMongoClientSettings(System.String)": {
+          "Lines": {
+            "41": 2,
+            "42": 2,
+            "44": 2,
+            "45": 1,
+            "46": 1,
+            "47": 13,
+            "48": 13,
+            "49": 14,
+            "50": 3,
+            "52": 2,
+            "53": 2
           },
           "Branches": []
         }
@@ -71,12 +87,12 @@
       "Catalog.API.Infrastructures.MongoDB.MongoDBSetting/<UseMongoDB>d__0": {
         "System.Void Catalog.API.Infrastructures.MongoDB.MongoDBSetting/<UseMongoDB>d__0::MoveNext()": {
           "Lines": {
-            "15": 1,
-            "16": 1,
             "17": 1,
+            "18": 1,
             "19": 1,
             "21": 1,
-            "22": 1
+            "23": 1,
+            "24": 1
           },
           "Branches": []
         }
@@ -98,69 +114,69 @@
       "Catalog.API.Infrastructures.MongoDB.MasterData.ProductData": {
         "Catalog.API.Domain.Product[] Catalog.API.Infrastructures.MongoDB.MasterData.ProductData::get_Products()": {
           "Lines": {
-            "7": 3,
-            "8": 3,
-            "9": 3,
-            "10": 3,
-            "11": 3,
-            "12": 3,
-            "13": 3,
-            "14": 3,
-            "15": 3,
-            "16": 3,
-            "17": 3,
-            "18": 3,
-            "19": 3,
-            "20": 3,
-            "21": 3,
-            "22": 3,
-            "23": 3,
-            "24": 3,
-            "25": 3,
-            "26": 3,
-            "27": 3,
-            "28": 3,
-            "29": 3,
-            "30": 3,
-            "31": 3,
-            "32": 3,
-            "33": 3,
-            "34": 3,
-            "35": 3,
-            "36": 3,
-            "37": 3,
-            "38": 3,
-            "39": 3,
-            "40": 3,
-            "41": 3,
-            "42": 3,
-            "43": 3,
-            "44": 3,
-            "45": 3,
-            "46": 3,
-            "47": 3,
-            "48": 3,
-            "49": 3,
-            "50": 3,
-            "51": 3,
-            "52": 3,
-            "53": 3,
-            "54": 3,
-            "55": 3,
-            "56": 3,
-            "57": 3,
-            "58": 3,
-            "59": 3,
-            "60": 3,
-            "61": 3,
-            "62": 3,
-            "63": 3,
-            "64": 3,
-            "65": 3,
-            "66": 3,
-            "67": 3,
-            "68": 3,
-            "69": 3
+            "7": 5,
+            "8": 5,
+            "9": 5,
+            "10": 5,
+            "11": 5,
+            "12": 5,
+            "13": 5,
+            "14": 5,
+            "15": 5,
+            "16": 5,
+            "17": 5,
+            "18": 5,
+            "19": 5,
+            "20": 5,
+            "21": 5,
+            "22": 5,
+            "23": 5,
+            "24": 5,
+            "25": 5,
+            "26": 5,
+            "27": 5,
+            "28": 5,
+            "29": 5,
+            "30": 5,
+            "31": 5,
+            "32": 5,
+            "33": 5,
+            "34": 5,
+            "35": 5,
+            "36": 5,
+            "37": 5,
+            "38": 5,
+            "39": 5,
+            "40": 5,
+            "41": 5,
+            "42": 5,
+            "43": 5,
+            "44": 5,
+            "45": 5,
+            "46": 5,
+            "47": 5,
+            "48": 5,
+            "49": 5,
+            "50": 5,
+            "51": 5,
+            "52": 5,
+            "53": 5,
+            "54": 5,
+            "55": 5,
+            "56": 5,
+            "57": 5,
+            "58": 5,
+            "59": 5,
+            "60": 5,
+            "61": 5,
+            "62": 5,
+            "63": 5,
+            "64": 5,
+            "65": 5,
+            "66": 5,
+            "67": 5,
+            "68": 5,
+            "69": 5
           },
           "Branches": []
         }
@@ -266,6 +282,37 @@
         }
       }
     },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/Products/GetProductByCategory.cs": {
+      "Catalog.API.EndPoints.Products.GetProductByCategory": {
+        "System.Void Catalog.API.EndPoints.Products.GetProductByCategory::Configure()": {
+          "Lines": {
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1,
+            "21": 1
+          },
+          "Branches": []
+        },
+        "System.Void Catalog.API.EndPoints.Products.GetProductByCategory::.ctor(Catalog.API.Applications.Services.IProductService)": {
+          "Lines": {
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1
+          },
+          "Branches": []
+        }
+      },
+      "Catalog.API.EndPoints.Products.GetProductByCategory/<HandleAsync>d__3": {
+        "System.Void Catalog.API.EndPoints.Products.GetProductByCategory/<HandleAsync>d__3::MoveNext()": {
+          "Lines": {
+            "24": 1
+          },
+          "Branches": []
+        }
+      }
+    },
     "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/EndPoints/Products/GetProductById.cs": {
       "Catalog.API.EndPoints.Products.GetProductById": {
         "System.Void Catalog.API.EndPoints.Products.GetProductById::Configure()": {
@@ -336,7 +383,8 @@
             "8": 1,
             "9": 1,
             "10": 1,
-            "11": 1
+            "11": 1,
+            "12": 1
           },
           "Branches": []
         }
@@ -377,10 +425,10 @@
       "Catalog.API.EndPoints.Controllers.ProductsController": {
         "System.Void Catalog.API.EndPoints.Controllers.ProductsController::.ctor(Catalog.API.Applications.Services.IProductService)": {
           "Lines": {
+            "12": 1,
             "13": 1,
             "14": 1,
-            "15": 1,
-            "16": 1
+            "15": 1
           },
           "Branches": []
         }
@@ -388,9 +436,9 @@
       "Catalog.API.EndPoints.Controllers.ProductsController/<Get>d__2": {
         "System.Void Catalog.API.EndPoints.Controllers.ProductsController/<Get>d__2::MoveNext()": {
           "Lines": {
+            "19": 1,
             "20": 1,
-            "21": 1,
-            "22": 1
+            "21": 1
           },
           "Branches": []
         }
@@ -596,37 +644,37 @@
       "Catalog.API.Domain.Product": {
         "System.String Catalog.API.Domain.Product::get_Name()": {
           "Lines": {
-            "9": 108
+            "9": 147
           },
           "Branches": []
         },
         "System.String Catalog.API.Domain.Product::get_Category()": {
           "Lines": {
-            "10": 108
+            "10": 160
           },
           "Branches": []
         },
         "System.String Catalog.API.Domain.Product::get_Summary()": {
           "Lines": {
-            "11": 108
+            "11": 147
           },
           "Branches": []
         },
         "System.String Catalog.API.Domain.Product::get_Description()": {
           "Lines": {
-            "12": 110
+            "12": 149
           },
           "Branches": []
         },
         "System.String Catalog.API.Domain.Product::get_ImageFile()": {
           "Lines": {
-            "13": 108
+            "13": 147
           },
           "Branches": []
         },
         "System.Decimal Catalog.API.Domain.Product::get_Price()": {
           "Lines": {
-            "14": 62
+            "14": 83
           },
           "Branches": []
         }
@@ -646,13 +694,13 @@
       "Catalog.API.Commons.ListResponse`1": {
         "System.Collections.Generic.IEnumerable`1<T> Catalog.API.Commons.ListResponse`1::get_Data()": {
           "Lines": {
-            "7": 6
+            "7": 12
           },
           "Branches": []
         },
         "System.Int32 Catalog.API.Commons.ListResponse`1::get_Total()": {
           "Lines": {
-            "8": 2
+            "8": 4
           },
           "Branches": []
         }
@@ -663,6 +711,16 @@
         "System.String Catalog.API.Commons.RouteExtension::ById(System.String)": {
           "Lines": {
             "6": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/nv/repos/microservice-netcore6/src/Services/Catalog/Catalog.API/Commons/TypeRequest.cs": {
+      "Catalog.API.Commons.TypeRequest`1": {
+        "T Catalog.API.Commons.TypeRequest`1::get_Payload()": {
+          "Lines": {
+            "7": 6
           },
           "Branches": []
         }
@@ -695,63 +753,55 @@
       "Catalog.API.Applications.Services.ProductService": {
         "System.Void Catalog.API.Applications.Services.ProductService::.ctor()": {
           "Lines": {
-            "22": 6,
-            "23": 6,
-            "24": 6,
-            "25": 6,
-            "26": 6
+            "21": 7,
+            "22": 7,
+            "23": 7,
+            "24": 7,
+            "25": 7
           },
           "Branches": []
         }
       },
       "Catalog.API.Applications.Services.ProductService/<>c__DisplayClass5_0": {
-        "MongoDB.Driver.FilterDefinition`1<Catalog.API.Domain.Product> Catalog.API.Applications.Services.ProductService/<>c__DisplayClass5_0::<GetProductByNameAsync>b__0(MongoDB.Driver.FilterDefinitionBuilder`1<Catalog.API.Domain.Product>)": {
+        "MongoDB.Driver.FilterDefinition`1<Catalog.API.Domain.Product> Catalog.API.Applications.Services.ProductService/<>c__DisplayClass5_0::<GetProductByCategoryAsync>b__0(MongoDB.Driver.FilterDefinitionBuilder`1<Catalog.API.Domain.Product>)": {
           "Lines": {
-            "30": 0
+            "29": 2
           },
           "Branches": []
         }
       },
-      "Catalog.API.Applications.Services.ProductService/<>c__DisplayClass6_0": {
-        "MongoDB.Driver.FilterDefinition`1<Catalog.API.Domain.Product> Catalog.API.Applications.Services.ProductService/<>c__DisplayClass6_0::<GetProductByCategoryAsync>b__0(MongoDB.Driver.FilterDefinitionBuilder`1<Catalog.API.Domain.Product>)": {
+      "Catalog.API.Applications.Services.ProductService/<>c__DisplayClass7_0": {
+        "MongoDB.Driver.FilterDefinition`1<Catalog.API.Domain.Product> Catalog.API.Applications.Services.ProductService/<>c__DisplayClass7_0::<UpdateProductAsync>b__0(MongoDB.Driver.FilterDefinitionBuilder`1<Catalog.API.Domain.Product>)": {
           "Lines": {
-            "31": 0
+            "34": 1
           },
           "Branches": []
         }
       },
-      "Catalog.API.Applications.Services.ProductService/<>c__DisplayClass8_0": {
-        "MongoDB.Driver.FilterDefinition`1<Catalog.API.Domain.Product> Catalog.API.Applications.Services.ProductService/<>c__DisplayClass8_0::<UpdateProductAsync>b__0(MongoDB.Driver.FilterDefinitionBuilder`1<Catalog.API.Domain.Product>)": {
+      "Catalog.API.Applications.Services.ProductService/<CreateProductAsync>d__6": {
+        "System.Void Catalog.API.Applications.Services.ProductService/<CreateProductAsync>d__6::MoveNext()": {
           "Lines": {
-            "36": 1
+            "30": 1
           },
           "Branches": []
         }
       },
-      "Catalog.API.Applications.Services.ProductService/<CreateProductAsync>d__7": {
-        "System.Void Catalog.API.Applications.Services.ProductService/<CreateProductAsync>d__7::MoveNext()": {
+      "Catalog.API.Applications.Services.ProductService/<DeleteProductAsync>d__8": {
+        "System.Void Catalog.API.Applications.Services.ProductService/<DeleteProductAsync>d__8::MoveNext()": {
           "Lines": {
-            "32": 1
-          },
-          "Branches": []
-        }
-      },
-      "Catalog.API.Applications.Services.ProductService/<DeleteProductAsync>d__9": {
-        "System.Void Catalog.API.Applications.Services.ProductService/<DeleteProductAsync>d__9::MoveNext()": {
-          "Lines": {
-            "44": 1,
+            "42": 1,
+            "43": 1,
             "45": 1,
+            "46": 1,
             "47": 1,
-            "48": 1,
             "49": 1,
-            "51": 1,
-            "52": 1,
-            "55": 0,
-            "56": 1
+            "50": 1,
+            "53": 0,
+            "54": 1
           },
           "Branches": [
             {
-              "Line": 47,
+              "Line": 45,
               "Offset": 176,
               "EndOffset": 181,
               "Path": 0,
@@ -759,7 +809,7 @@
               "Hits": 1
             },
             {
-              "Line": 51,
+              "Line": 49,
               "Offset": 332,
               "EndOffset": 334,
               "Path": 0,
@@ -767,7 +817,7 @@
               "Hits": 1
             },
             {
-              "Line": 51,
+              "Line": 49,
               "Offset": 332,
               "EndOffset": 351,
               "Path": 1,
@@ -775,7 +825,7 @@
               "Hits": 0
             },
             {
-              "Line": 47,
+              "Line": 45,
               "Offset": 176,
               "EndOffset": 355,
               "Path": 1,
@@ -788,7 +838,7 @@
       "Catalog.API.Applications.Services.ProductService/<GetProductAsync>d__4": {
         "System.Void Catalog.API.Applications.Services.ProductService/<GetProductAsync>d__4::MoveNext()": {
           "Lines": {
-            "29": 1
+            "28": 1
           },
           "Branches": []
         }
@@ -796,25 +846,25 @@
       "Catalog.API.Applications.Services.ProductService/<GetProductsAsync>d__3": {
         "System.Void Catalog.API.Applications.Services.ProductService/<GetProductsAsync>d__3::MoveNext()": {
           "Lines": {
-            "28": 2
+            "27": 2
           },
           "Branches": []
         }
       },
-      "Catalog.API.Applications.Services.ProductService/<UpdateProductAsync>d__8": {
-        "System.Void Catalog.API.Applications.Services.ProductService/<UpdateProductAsync>d__8::MoveNext()": {
+      "Catalog.API.Applications.Services.ProductService/<UpdateProductAsync>d__7": {
+        "System.Void Catalog.API.Applications.Services.ProductService/<UpdateProductAsync>d__7::MoveNext()": {
           "Lines": {
-            "34": 1,
+            "32": 1,
+            "33": 1,
             "35": 1,
-            "37": 1,
+            "36": 1,
             "38": 1,
-            "40": 1,
-            "41": 1,
-            "42": 1
+            "39": 1,
+            "40": 1
           },
           "Branches": [
             {
-              "Line": 40,
+              "Line": 38,
               "Offset": 231,
               "EndOffset": 233,
               "Path": 0,
@@ -822,7 +872,7 @@
               "Hits": 1
             },
             {
-              "Line": 40,
+              "Line": 38,
               "Offset": 231,
               "EndOffset": 250,
               "Path": 1,

@@ -52,11 +52,7 @@ internal class OperationSecurityProcessor : IOperationProcessor
         if (epMeta is null)
             return true;
 
-        if (epMeta.OfType<ControllerAttribute>().Any())
-        {
-            // Need for finding not match authentication and return true for remove header authentication and authorization.
-        }
-        else
+        if (!epMeta.OfType<ControllerAttribute>().Any())
         {
             if ((epMeta.OfType<AllowAnonymousAttribute>().Any() || !epMeta.OfType<AuthorizeAttribute>().Any()))
             return true;
