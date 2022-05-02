@@ -1,4 +1,6 @@
+using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.Core.Events;
 using MongoDB.Entities;
 
 namespace Catalog.API.Infrastructures.MongoDB;
@@ -16,7 +18,7 @@ public static class MongoDBSetting
         var connectionString = app.Configuration.GetValue<string>(DatabaseSettings.ConnectionString);
         var databaseName = app.Configuration.GetValue<string>(DatabaseSettings.DatabaseName);
 
-        await DB.InitAsync(databaseName, MongoClientSettings.FromConnectionString(connectionString));
+        await DB.InitAsync(databaseName, GetMongoClientSettings(connectionString));
 
         await DB.MigrateAsync();
     }
@@ -28,10 +30,25 @@ public static class MongoDBSetting
         var connectionString = config.GetValue<string>(DatabaseSettings.ConnectionString);
         var databaseName = config.GetValue<string>(DatabaseSettings.DatabaseName);
 
-        DB.InitAsync(databaseName, MongoClientSettings.FromConnectionString(connectionString)).Wait();
+        DB.InitAsync(databaseName, GetMongoClientSettings(connectionString)).Wait();
 
         DB.MigrateAsync().Wait();
 
         return services;
+    }
+
+    public static MongoClientSettings GetMongoClientSettings(string connectionString)
+    {
+        var mongoClientSettings = MongoClientSettings.FromConnectionString(connectionString);
+
+        mongoClientSettings.ClusterConfigurator = cb =>
+        {
+            cb.Subscribe<CommandStartedEvent>(e =>
+            {
+                Console.WriteLine($"{e.CommandName} - {e.Command.ToJson()}");
+            });
+        };
+
+        return mongoClientSettings;
     }
 }

@@ -167,7 +167,7 @@
                 "test",
                 "/p:CollectCoverage=true",
                 "/p:CoverletOutputFormat=lcov",
-                "/p:CoverletOutput=./lcov.info",
+                "/p:CoverletOutput=lcov.info",
                 "${workspaceFolder}/src/Services/Catalog/Catalog.API.Test/Catalog.API.Test.csproj"
             ],
             "problemMatcher": "$msCompile",

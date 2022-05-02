@@ -2,7 +2,6 @@ using Catalog.API.Applications.Services;
 using Catalog.API.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
-using Microsoft.AspNetCore.OData.Routing.Controllers;
 
 namespace Catalog.API.EndPoints.Controllers;
 
