@@ -55,5 +55,4 @@ public static class HttpClientExtentions
     /// <param name="request">the request dto</param>
     public static Task<(HttpResponseMessage? response, TResponse? result)> DELETEAsync<TEndpoint, TRequest, TResponse>(this HttpClient client, TRequest request) where TEndpoint : BaseEndpoint
         => SENDAsync<TRequest, TResponse>(client, IEndpoint.TestURLFor<TEndpoint>(), HttpMethod.Delete, request);
-
 }
