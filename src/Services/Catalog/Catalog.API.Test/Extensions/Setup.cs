@@ -6,7 +6,7 @@ using FastEndpoints;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 
-namespace Catalog.API.Test.IntegrationTest;
+namespace Catalog.API.Test.Extensions;
 
 public static class Setup
 {

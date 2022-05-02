@@ -16,8 +16,14 @@
 
 ### Testing note  
   For setup with Integration test, you should fill the config below on project which is need to testing.  
+
 ```xml
+<PropertyGroup>
+  ...
+  <ProduceReferenceAssemblyInOutDir>true</ProduceReferenceAssemblyInOutDir>
+</PropertyGroup>
+...
 <ItemGroup>
-    <InternalsVisibleTo Include="$(AssemblyName).Test" />
+  <InternalsVisibleTo Include="$(AssemblyName).Test" />
 </ItemGroup>
 ```  

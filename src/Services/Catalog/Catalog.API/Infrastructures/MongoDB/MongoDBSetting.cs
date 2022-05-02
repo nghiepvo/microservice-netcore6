@@ -20,4 +20,18 @@ public static class MongoDBSetting
 
         await DB.MigrateAsync();
     }
+
+    public static IServiceCollection AddMongoDB(this IServiceCollection services)
+    {
+        var config = services.BuildServiceProvider().GetRequiredService<IConfiguration>();
+
+        var connectionString = config.GetValue<string>(DatabaseSettings.ConnectionString);
+        var databaseName = config.GetValue<string>(DatabaseSettings.DatabaseName);
+
+        DB.InitAsync(databaseName, MongoClientSettings.FromConnectionString(connectionString)).Wait();
+
+        DB.MigrateAsync().Wait();
+
+        return services;
+    }
 }

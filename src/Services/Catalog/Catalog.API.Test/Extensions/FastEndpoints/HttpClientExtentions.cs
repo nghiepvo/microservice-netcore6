@@ -34,7 +34,6 @@ public static class HttpClientExtentions
 
         try
         {
-            var str = await res.Content.ReadAsStringAsync();
             body = await res.Content.ReadFromJsonAsync<TResponse>(new JsonSerializerOptions { PropertyNameCaseInsensitive = true});
         }
         catch (JsonException)

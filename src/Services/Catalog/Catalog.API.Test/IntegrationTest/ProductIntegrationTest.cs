@@ -7,7 +7,7 @@ using Catalog.API.EndPoints.Products;
 using Catalog.API.Infrastructures.MongoDB.MasterData;
 using FastEndpoints;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using static Catalog.API.Test.IntegrationTest.Setup;
+using static Catalog.API.Test.Extensions.Setup;
 
 namespace Catalog.API.Test.IntegrationTest;
 

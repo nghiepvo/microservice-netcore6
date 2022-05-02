@@ -30,7 +30,7 @@ builder.Services.AddSwaggerDoc(settings =>
 }, maxEndpointVersion: EndPointConfig.Version1, addJWTBearerAuth: false);
 
 builder.Services.AddApplication();
-builder.Services.AddControllers().AddOData(opt => opt.EnableQueryFeatures().AddRouteComponents("odata", ModelBuilder.GetEdmModel()));
+builder.Services.AddControllers().AddOData(opt => opt.EnableQueryFeatures(5).AddRouteComponents("odata", ModelBuilder.GetEdmModel()));
 
 var app = builder.Build();
 
