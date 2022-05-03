@@ -1,8 +1,8 @@
 using Catalog.API.Domain;
 
-namespace Catalog.API.Infrastructures.MongoDB.MasterData;
+namespace Catalog.API.Infrastructures.MongoDB.Migrations;
 
-public static class ProductData
+public static class ProductMigrationData
 {
     public static Product[] Products => new []
     {

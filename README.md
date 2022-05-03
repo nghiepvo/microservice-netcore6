@@ -38,9 +38,9 @@
   Setting to task.json file as well. with some command line bellow  
 > dotnet sonarscanner begin /k:"Microservice-Net6" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="5c2db1d37a208fd594aae6625f6a844f15f6dd78"  
 > dotnet build  
-> dotnet test --collect:"XPlat Code Coverage"  
+> dotnet test --collect:"XPlat Code Coverage"
 
-> dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./coverage.opencover.xml  
+> dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=$PWD/coverage.opencover.xml  
 
 > dotnet sonarscanner end /d:sonar.login="5c2db1d37a208fd594aae6625f6a844f15f6dd78"  
 

@@ -3,7 +3,7 @@ using Catalog.API.Commons;
 using Catalog.API.Commons.Extensions;
 using Catalog.API.Domain;
 using Catalog.API.EndPoints.Products;
-using Catalog.API.Infrastructures.MongoDB.MasterData;
+using Catalog.API.Infrastructures.MongoDB.Migrations;
 using FastEndpoints;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static Catalog.API.Test.Extensions.Setup;
@@ -20,26 +20,26 @@ public class ProductIntegrationTest
 
         Assert.AreEqual(HttpStatusCode.OK, resp?.StatusCode);
 
-        Assert.AreEqual(ProductData.Products.Length, res?.Data.Count());
+        Assert.AreEqual(ProductMigrationData.Products.Length, res?.Data.Count());
     }
 
     [TestMethod]
     public async Task GetProductsByCategorySuccess()
     {
-        var product = ProductData.Products.First();
+        var product = ProductMigrationData.Products.First();
 
         var (resp, res) = await Client.GETAsync<GetProductByCategory, TypeRequest<string>, ListResponse<Product>>(new() { Payload = product.Category});
 
         Assert.AreEqual(HttpStatusCode.OK, resp?.StatusCode);
 
-        Assert.AreEqual(ProductData.Products.Count(o=>o.Category.Equals(product.Category)), res?.Data.Count());
+        Assert.AreEqual(ProductMigrationData.Products.Count(o=>o.Category.Equals(product.Category)), res?.Data.Count());
     }
 
 
     [TestMethod]
     public async Task CRUDProductSuccess()
     {
-        var product = ProductData.Products.First();
+        var product = ProductMigrationData.Products.First();
 
         product.ID = Guid.NewGuid().AsStringObjectId();
 

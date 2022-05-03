@@ -1,6 +1,6 @@
 using System.Net;
 using Catalog.API.Domain;
-using Catalog.API.Infrastructures.MongoDB.MasterData;
+using Catalog.API.Infrastructures.MongoDB.Migrations;
 using Catalog.API.Test.Extensions;
 using Catalog.API.Test.Extensions.Odata;
 using Xunit;
@@ -28,7 +28,7 @@ public class ProductsOdataIntegrationTest: SetupXUnit
 
         Assert.NotEmpty(nextLink);
 
-        Assert.Equal(ProductData.Products.First().ID, resp?.FirstOrDefault()?.ID);
+        Assert.Equal(ProductMigrationData.Products.First().ID, resp?.FirstOrDefault()?.ID);
     }
 
 }
