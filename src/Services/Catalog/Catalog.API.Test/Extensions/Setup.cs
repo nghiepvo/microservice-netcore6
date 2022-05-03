@@ -18,6 +18,7 @@ public static class Setup
         .WithWebHostBuilder(b => b.ConfigureAppConfiguration((context, config) =>
         {
             config.AddJsonFile(AppSettingFile);
+            config.AddEnvironmentVariables();
         }))
         .CreateClient();
 

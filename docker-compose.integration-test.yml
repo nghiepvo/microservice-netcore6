@@ -1,0 +1,39 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  catalog.test.db:
+    image: mongo
+    container_name: "catalog.test.db"
+    networks:
+      - "integration_test"
+  integration-tests:
+    container_name: integration-tests
+    image: net6-java11-sonarscanner-build #image: mcr.microsoft.com/dotnet/sdk:6.0-focal
+    environment:
+      - "DatabaseSettings:ConnectionString=mongodb://catalog.test.db:27017"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command:
+      - /bin/bash
+      - -c
+      - |
+        apt-get update
+        apt-get install -y openjdk-11-jdk
+        pwd
+        export PATH="$PATH:/root/.dotnet/tools"
+        dotnet tool install --global dotnet-sonarscanner
+        cd src
+        dotnet sonarscanner begin /k:"Microservice-NET6" /d:sonar.host.url="https://aaf2-115-74-83-192.ap.ngrok.io" /d:sonar.login="admin" /d:sonar.password="123456" /d:sonar.cpd.exclusions="**/Migrations/*.cs" /d:sonar.cs.opencover.it.reportsPaths="$PWD/coverage.opencover.xml"
+        dotnet build
+        dotnet test --collect:"XPlat Code Coverage"
+        dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=$PWD/coverage.opencover.xml
+        dotnet sonarscanner end /d:sonar.login="admin" /d:sonar.password="123456"
+    networks:
+      - "integration_test"
+    depends_on:
+      - "catalog.test.db"
+networks:
+  integration_test:

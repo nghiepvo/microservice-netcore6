@@ -14,6 +14,7 @@ public class WebODataTestFixture<TStartup> : WebApplicationFactory<TStartup> whe
             .UseStartup<TStartup>()
             .ConfigureAppConfiguration((host, config) => {
                 config.AddJsonFile(AppSettingFile);
+                config.AddEnvironmentVariables();
             })
 
             // we have to set the root otherwise we get the System.IO.DirectoryNotFoundException
