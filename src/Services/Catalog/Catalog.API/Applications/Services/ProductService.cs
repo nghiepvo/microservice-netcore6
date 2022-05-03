@@ -10,7 +10,7 @@ public interface IProductService
     Task<IEnumerable<Product>> GetProductByCategoryAsync(string categoryName, CancellationToken ct = default);
     Task CreateProductAsync(Product product, CancellationToken ct = default);
     Task<bool> UpdateProductAsync(Product product, CancellationToken ct = default);
-    Task<bool> DeleteProductAsync(string id, CancellationToken ct = default);
+    Task<bool> DeleteProductAsync(string id);
 }
 
 public class ProductService : IProductService
@@ -24,37 +24,28 @@ public class ProductService : IProductService
         _updateProduct = DB.Update<Product>();
     }
 
-    public async Task<IEnumerable<Product>> GetProductsAsync(CancellationToken ct) => await _products.ExecuteAsync(ct);
+    public async Task<IEnumerable<Product>> GetProductsAsync(CancellationToken ct = default) => await _products.ExecuteAsync(ct);
 
-    public async Task<Product> GetProductAsync(string id, CancellationToken ct) => await _products.OneAsync(id, ct);
+    public async Task<Product> GetProductAsync(string id, CancellationToken ct = default) => await _products.OneAsync(id, ct);
 
-    public async Task<IEnumerable<Product>> GetProductByCategoryAsync(string categoryName, CancellationToken ct) => await _products.ManyAsync(f => f.Eq(p => p.Category, categoryName), ct);
+    public async Task<IEnumerable<Product>> GetProductByCategoryAsync(string categoryName, CancellationToken ct = default) => await _products.ManyAsync(f => f.Eq(p => p.Category, categoryName), ct);
 
-    public async Task CreateProductAsync(Product product, CancellationToken ct) => await product.SaveAsync(cancellation:ct);
+    public async Task CreateProductAsync(Product product, CancellationToken ct = default) => await product.SaveAsync(cancellation: ct);
 
-    public async Task<bool> UpdateProductAsync(Product product, CancellationToken ct)
+    public async Task<bool> UpdateProductAsync(Product product, CancellationToken ct = default)
     {
         var updateResult = await _updateProduct
             .Match(m => m.Eq(p => p.ID, product.ID))
             .ModifyWith(product)
             .ExecuteAsync(ct);
 
-        return updateResult.IsAcknowledged
-                    && updateResult.ModifiedCount > 0;
+        return updateResult.ModifiedCount > 0;
     }
 
-    public async Task<bool> DeleteProductAsync(string id, CancellationToken ct)
+    public async Task<bool> DeleteProductAsync(string id)
     {
-        var product = await DB.Find<Product>().OneAsync(id, ct);
+        var deleteResult = await DB.DeleteAsync<Product>(id);
 
-        if (product != null)
-        {
-            var deleteResult = await product.DeleteAsync();
-
-            return deleteResult.IsAcknowledged
-                && deleteResult.DeletedCount > 0;
-        }
-
-        return false;
+        return deleteResult.DeletedCount > 0;
     }
 }

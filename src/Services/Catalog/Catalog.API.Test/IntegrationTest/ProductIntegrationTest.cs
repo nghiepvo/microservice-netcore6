@@ -1,7 +1,6 @@
 using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Catalog.API.Commons;
+using Catalog.API.Commons.Extensions;
 using Catalog.API.Domain;
 using Catalog.API.EndPoints.Products;
 using Catalog.API.Infrastructures.MongoDB.MasterData;
@@ -42,7 +41,7 @@ public class ProductIntegrationTest
     {
         var product = ProductData.Products.First();
 
-        product.ID = Guid.NewGuid().ToString("N");
+        product.ID = Guid.NewGuid().AsStringObjectId();
 
         // Add Product
         var respPOST = await Client.POSTAsync<AddProduct, Product>(product);
@@ -75,7 +74,7 @@ public class ProductIntegrationTest
     [TestMethod]
     public async Task DeleteProductFail()
     {
-        var id = Guid.NewGuid().ToString("N");
+        var id = Guid.NewGuid().AsStringObjectId();
 
        var (respDELETE, resDLETE) = await Client.DELETEAsync<DeleteProductById, IdRequest<string>, TypeResponse<bool>>(new() { Id = id});
 

@@ -352,3 +352,5 @@ MigrationBackup/
 # Test Ouput file
 lcov.info
 coverage.json
+coverage.opencover.xml
+.sonarqube

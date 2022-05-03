@@ -5,7 +5,7 @@ using MongoDB.Entities;
 
 namespace Catalog.API.Infrastructures.MongoDB;
 
-internal class DatabaseSettings
+internal static class DatabaseSettings
 {
     public const string ConnectionString = $"{nameof(DatabaseSettings)}:{nameof(ConnectionString)}";
     public const string DatabaseName = $"{nameof(DatabaseSettings)}:{nameof(DatabaseName)}";

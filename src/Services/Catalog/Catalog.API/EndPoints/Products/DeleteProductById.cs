@@ -20,5 +20,5 @@ public class DeleteProductById : Endpoint<IdRequest<string>, TypeResponse<bool>>
     }
 
     public override async Task HandleAsync(IdRequest<string> request, CancellationToken ct)
-        => await SendAsync(new TypeResponse<bool> { Body = await _productService.DeleteProductAsync(request.Id, ct) }, cancellation: ct);
+        => await SendAsync(new TypeResponse<bool> { Body = await _productService.DeleteProductAsync(request.Id) }, cancellation: ct);
 }

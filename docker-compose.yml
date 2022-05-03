@@ -11,7 +11,8 @@ services:
       - "27017:27017"
     volumes:
       - "mongo_data:/data/db"
-
+    networks:
+      - "develop"
   catalog.api:
     image: catalogapi
     build:
@@ -22,7 +23,11 @@ services:
       - "5000:5000"
     environment:
       - "DatabaseSettings:ConnectionString=mongodb://catalog.db:27017"
+    networks:
+      - "develop"
     depends_on:
       - "catalog.db"
 volumes:
   mongo_data:
+networks:
+  develop:

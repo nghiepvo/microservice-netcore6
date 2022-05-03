@@ -1,6 +1,6 @@
 namespace Catalog.API.EndPoints;
 
-public class EndPointConfig
+public static class EndPointConfig
 {
     public const string APITitle = "Catalog API";
     public const string APIPrefix = $"api";

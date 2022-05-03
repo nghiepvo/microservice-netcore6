@@ -55,18 +55,25 @@ internal class OperationSecurityProcessor : IOperationProcessor
         if (!epMeta.OfType<ControllerAttribute>().Any())
         {
             if ((epMeta.OfType<AllowAnonymousAttribute>().Any() || !epMeta.OfType<AuthorizeAttribute>().Any()))
-            return true;
+            {
+                return true;
+            }
 
             var epSchemes = epMeta.OfType<EndpointDefinition>().Single().AuthSchemes;
             if (epSchemes?.Contains(schemeName) == false)
+            {
                 return true;
+            }
         }
 
-        (context.OperationDescription.Operation.Security ??= new List<OpenApiSecurityRequirement>()).Add(
-            new OpenApiSecurityRequirement
-            {
-                { schemeName, BuildScopes(epMeta!.OfType<AuthorizeAttribute>()) }
-            });
+        if (context.OperationDescription.Operation.Security == null) {
+            context.OperationDescription.Operation.Security = new List<OpenApiSecurityRequirement>();
+        }
+
+        context.OperationDescription.Operation.Security.Add(new OpenApiSecurityRequirement
+        {
+            { schemeName, BuildScopes(epMeta!.OfType<AuthorizeAttribute>()) }
+        });
 
         return true;
     }

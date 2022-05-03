@@ -1,0 +1,9 @@
+{
+    "_comment": "The authentication can be proceed in two ways. Using combination of username and password or token. The project.json which contains two of them at once is invalid.",
+    "project": "Microservice-NET6",
+    "sonarURL": "http://localhost:9000/",
+    "auth": {
+        "username": "admin",
+        "password": "123456"
+    }
+}

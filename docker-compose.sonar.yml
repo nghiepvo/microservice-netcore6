@@ -1,0 +1,20 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  sonarqube:
+    image: sonarqube
+    container_name: "sonarqube"
+    restart: always
+    ports:
+      - "9000:9000"
+      - "9092:9092"
+    volumes:
+      - "sonar_data:/opt/sonarqube"
+    networks:
+      - sonarqube
+volumes:
+  sonar_data:
+networks:
+  sonarqube:

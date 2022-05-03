@@ -4,7 +4,7 @@ using Microsoft.OData.ModelBuilder;
 
 namespace Catalog.API.EndPoints;
 
-public class ModelBuilder
+public static class ModelBuilder
 {
     public static IEdmModel GetEdmModel()
     {

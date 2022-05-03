@@ -30,7 +30,9 @@ public class AuthenticationEndPoint : Endpoint<AuthenticationRequest, Authentica
                 Allow.ProductUpdate,
                 Allow.ProductDelete
             };
+
             var expireDate = DateTime.UtcNow.AddDays(1);
+
             var jwtToken = JWTBearer.CreateToken(
                 signingKey: _configuration[EndPointConfig.TokenKey],
                 expireAt: expireDate,
@@ -45,7 +47,7 @@ public class AuthenticationEndPoint : Endpoint<AuthenticationRequest, Authentica
                 ExpiryDate = expireDate,
                 JWTToken = jwtToken,
                 Permissions = permissions
-            });
+            }, cancellation: ct);
         }
         else
         {

@@ -1,7 +1,7 @@
 using Catalog.API.Commons;
 
 namespace Catalog.API.EndPoints.Products;
-public class ProductRoutes
+public static class ProductRoutes
 {
     private const string Product = "Product";
     public static readonly string GetProducts = Product;
