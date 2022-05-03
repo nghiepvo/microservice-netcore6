@@ -52,11 +52,10 @@
 > export Sonar_Url="https://caa6-115-74-83-192.ap.ngrok.io"  
 > export Sonar_Login="admin"  
 > export Sonar_Password="123456"  
-> chmod +x sonarqube-runner.sh   
-
-
+> chmod +x sonarqube-runner.sh  
 
 ### NGROK  
   For sonar publish to buid
+> sudo snap install ngrok  
 > ngrok http 9000 --log=stdout > ngrok.log &  
 > cat ngrok.log  
