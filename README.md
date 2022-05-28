@@ -58,10 +58,6 @@
 
   Set Environment on linux for run sonarqube-runner.sh  
 
-> export Sonar_Project="Microservice-NET6"  
-> export Sonar_Url="https://aaf2-115-74-83-192.ap.ngrok.io"  
-> export Sonar_Login="admin"  
-> export Sonar_Password="123456"  
 > chmod +x sonarqube-runner.sh  
 
 ### NGROK  
@@ -71,6 +67,3 @@
 > rm -f ngrok.log && ngrok http 9000 --log=stdout > ngrok.log &  
 > cat ngrok.log  
 
-### Docker Build
-
-> docker build -t net6-java11-sonarscanner-build -f ./Docker-Build/Dockerfile .  
