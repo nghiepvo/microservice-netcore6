@@ -48,6 +48,8 @@ Or on cloud
 If have issue on linux  
 
 > export PATH="$PATH:$HOME/.dotnet/tools"  
+
+Run Test and Commit on Sonar  
 > dotnet build  
 > dotnet test --collect:"XPlat Code Coverage"  
 > dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=$PWD/coverage.opencover.xml  
