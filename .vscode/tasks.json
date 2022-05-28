@@ -52,6 +52,22 @@
             "problemMatcher": "$msCompile"
         },
         {
+            "label": "Build Basket API",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/Services/Basket/Basket.API/Basket.API.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
             "type": "docker-build",
             "label": "Docker build Catalog API debug",
             "group": "build",

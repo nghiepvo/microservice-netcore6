@@ -1,4 +1,3 @@
-using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Entities;
 
 namespace Catalog.API.Domain;

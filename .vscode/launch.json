@@ -33,6 +33,34 @@
             }
         },
         {
+            "name": "Basket.API",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "Build Basket API",
+            "program": "${workspaceFolder}/src/Services/Basket/Basket.API/bin/Debug/net6.0/Basket.API.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/Services/Basket/Basket.API",
+            "stopAtEntry": false,
+            "internalConsoleOptions": "openOnSessionStart",
+            "launchBrowser": {
+                "enabled": true,
+                "args": "${auto-detect-url}/swagger",
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start ${auto-detect-url}"
+                },
+                "osx": {
+                    "command": "open"
+                },
+                "linux": {
+                    "command": "xdg-open"
+                }
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        {
             "name": "Catalog.API Docker",
             "type": "docker",
             "request": "attach",

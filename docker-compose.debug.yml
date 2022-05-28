@@ -3,7 +3,6 @@
 version: '3.4'
 
 services:
-  catalog.db:
   catalog.api:
     image: catalogapi:dev
     environment:
