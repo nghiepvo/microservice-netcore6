@@ -7,4 +7,3 @@
 > dotnet new webapi --name Basket.API --use-minimal-apis true --no-https true  
 > cd ../.. && dotnet sln add ./Services/Basket/Basket.API/Basket.API.csproj  
 > cd Services/Basket/Basket.API  
-
