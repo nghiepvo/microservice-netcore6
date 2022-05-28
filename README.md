@@ -1,6 +1,6 @@
 # Microservice netcore6  
 
-### Solution structure: **microservice-sample**  
+## Solution structure: **microservice-sample**  
 
 > mkdir src && cd src  
 > dotnet new sln  
@@ -41,18 +41,17 @@
 
   Setting to task.json file as well. with some command line bellow  
 > dotnet sonarscanner begin /k:"Microservice-NET6" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="admin" /d:sonar.password="123456" /d:sonar.cpd.exclusions="**/Migrations/*.cs" /d:sonar.cs.opencover.it.reportsPaths="/app/src/coverage.opencover.xml"  
-*Or on cloud*  
+
+Or on cloud  
 > dotnet sonarscanner begin /o:nghiepvo /k:Microservice-NET6 /d:sonar.host.url=<https://sonarcloud.io> /d:sonar.cpd.exclusions="**/Migrations/*.cs" /d:sonar.cs.opencover.it.reportsPaths="/app/src/coverage.opencover.xml"  
 
-*if have issue on linux*  
-> export PATH="$PATH:$HOME/.dotnet/tools"  
+If have issue on linux  
 
+> export PATH="$PATH:$HOME/.dotnet/tools"  
 > dotnet build  
 > dotnet test --collect:"XPlat Code Coverage"  
-
 > dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=$PWD/coverage.opencover.xml  
-
-> dotnet sonarscanner end /d:sonar.login="admin" /d:sonar.password="123456"  
+> dotnet sonarscanner end  
 
   Go to SonarQube Web UI > Select Project > Project Seting > Language > C# > OpenCover Integration Tests Reports Paths > /home/nv/repos/microservice-netcore6/src/coverage.opencover.xml  
 
@@ -66,4 +65,3 @@
 > sudo snap install ngrok  
 > rm -f ngrok.log && ngrok http 9000 --log=stdout > ngrok.log &  
 > cat ngrok.log  
-
