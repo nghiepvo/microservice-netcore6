@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FastEndpoints" Version="4.0.0" />
-    <PackageReference Include="FastEndpoints.Security" Version="4.0.0" />
-    <PackageReference Include="FastEndpoints.Swagger" Version="4.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OData" Version="8.0.10" />
     <PackageReference Include="MongoDB.Entities" Version="20.26.3" />
+  </ItemGroup>
+    <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.Libraries\Common.Libraries.csproj" />
   </ItemGroup>
   <ItemGroup>
       <InternalsVisibleTo Include="$(AssemblyName).Test" />

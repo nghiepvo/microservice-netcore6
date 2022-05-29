@@ -16,6 +16,7 @@ And update hosts file with content below:*
 > dotnet new webapi --name Catalog.API --use-minimal-apis true --no-https true  
 > cd ../.. && dotnet sln add ./Services/Catalog/Catalog.API/Catalog.API.csproj  
 > cd Services/Catalog/Catalog.API  
+> dotnet add reference ../../Common/Common.Libraries/Common.Libraries.csproj
 
 - Generate tasks.json and launch.json for run or debug.  
 - Generate docker-compose file.  

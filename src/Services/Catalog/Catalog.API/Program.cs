@@ -7,15 +7,18 @@ using Catalog.API.Applications;
 using Catalog.API.EndPoints;
 using Microsoft.AspNetCore.OData;
 using Catalog.API.Infrastructures.Nswag;
+using Common.Libraries.EndPoints;
+
+const string APITitle = "Catalog API";
 
 var builder = WebApplication.CreateBuilder();
 
 builder.Services.AddFastEndpoints();
-builder.Services.AddAuthenticationJWTBearer(builder.Configuration["TokenKey"]);
+builder.Services.AddAuthenticationJWTBearer(builder.Configuration[EndPointConfig.TokenKey]);
 builder.Services.AddSwaggerDoc(settings =>
 {
     settings.DocumentName = EndPointConfig.Version2Str;
-    settings.Title = EndPointConfig.APITitle;
+    settings.Title = APITitle;
     settings.Version = EndPointConfig.Version2Str;
     settings.AddAuthController();
     settings.OperationProcessors.Add(new AddOdataQuery());
@@ -23,7 +26,7 @@ builder.Services.AddSwaggerDoc(settings =>
 .AddSwaggerDoc(settings =>
 {
     settings.DocumentName = EndPointConfig.Version1Str;
-    settings.Title = EndPointConfig.APITitle;
+    settings.Title = APITitle;
     settings.Version = EndPointConfig.Version1Str;
     settings.AddAuthController();
     settings.OperationProcessors.Add(new AddOdataQuery());

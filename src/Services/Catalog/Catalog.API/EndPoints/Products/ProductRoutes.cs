@@ -1,4 +1,4 @@
-using Catalog.API.Commons;
+using Common.Libraries.ViewModels;
 
 namespace Catalog.API.EndPoints.Products;
 public static class ProductRoutes

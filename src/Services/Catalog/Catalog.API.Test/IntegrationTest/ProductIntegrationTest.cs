@@ -1,22 +1,26 @@
+using System.Diagnostics;
 using System.Net;
-using Catalog.API.Commons;
-using Catalog.API.Commons.Extensions;
 using Catalog.API.Domain;
 using Catalog.API.EndPoints.Products;
+using Catalog.API.Extensions;
 using Catalog.API.Infrastructures.MongoDB.Migrations;
+using Common.Libraries.ViewModels;
+using Common.LibrariesTest.Setups;
 using FastEndpoints;
+using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using static Catalog.API.Test.Extensions.Setup;
 
 namespace Catalog.API.Test.IntegrationTest;
 
 [TestClass]
 public class ProductIntegrationTest
 {
+    private readonly SetupAPITest<Program> _test = new SetupAPITest<Program>(new WebApplicationFactory<Program>());
+
     [TestMethod]
     public async Task GetProductsSuccess()
     {
-        var (resp, res) = await Client.GETAsync<GetProducts, ListResponse<Product>>();
+        var (resp, res) = await _test.Client.GETAsync<GetProducts, ListResponse<Product>>();
 
         Assert.AreEqual(HttpStatusCode.OK, resp?.StatusCode);
 
@@ -28,7 +32,7 @@ public class ProductIntegrationTest
     {
         var product = ProductMigrationData.Products.First();
 
-        var (resp, res) = await Client.GETAsync<GetProductByCategory, TypeRequest<string>, ListResponse<Product>>(new() { Payload = product.Category});
+        var (resp, res) = await _test.Client.GETAsync<GetProductByCategory, TypeRequest<string>, ListResponse<Product>>(new() { Payload = product.Category});
 
         Assert.AreEqual(HttpStatusCode.OK, resp?.StatusCode);
 
@@ -44,13 +48,13 @@ public class ProductIntegrationTest
         product.ID = Guid.NewGuid().AsStringObjectId();
 
         // Add Product
-        var respPOST = await Client.POSTAsync<AddProduct, Product>(product);
+        var respPOST = await _test.Client.POSTAsync<AddProduct, Product>(product);
 
         Assert.AreEqual(HttpStatusCode.OK, respPOST?.StatusCode);
 
 
         // Read Product
-        var (respGET, resGET) = await Client.GETAsync<GetProductById, IdRequest<string>, Product>(new() { Id = product.ID });
+        var (respGET, resGET) = await _test.Client.GETAsync<GetProductById, IdRequest<string>, Product>(new() { Id = product.ID });
 
         Assert.AreEqual(HttpStatusCode.OK, respGET?.StatusCode);
         Assert.AreEqual(product.ID, resGET?.ID);
@@ -58,13 +62,13 @@ public class ProductIntegrationTest
         // Update Product
         product.Description = new string(product.Description.Reverse().ToArray());
 
-        var (respPUT, resPUT) = await Client.PUTAsync<UpdateProductById, Product, TypeResponse<bool>>(product);
+        var (respPUT, resPUT) = await _test.Client.PUTAsync<UpdateProductById, Product, TypeResponse<bool>>(product);
 
         Assert.AreEqual(HttpStatusCode.OK, respPUT?.StatusCode);
         Assert.IsTrue(resPUT?.Body);
 
         //Delete Product
-        var (respDELETE, resDLETE) = await Client.DELETEAsync<DeleteProductById, IdRequest<string>, TypeResponse<bool>>(new() { Id = product.ID});
+        var (respDELETE, resDLETE) = await _test.Client.DELETEAsync<DeleteProductById, IdRequest<string>, TypeResponse<bool>>(new() { Id = product.ID});
 
         Assert.AreEqual(HttpStatusCode.OK, respDELETE?.StatusCode);
 
@@ -76,7 +80,7 @@ public class ProductIntegrationTest
     {
         var id = Guid.NewGuid().AsStringObjectId();
 
-       var (respDELETE, resDLETE) = await Client.DELETEAsync<DeleteProductById, IdRequest<string>, TypeResponse<bool>>(new() { Id = id});
+       var (respDELETE, resDLETE) = await _test.Client.DELETEAsync<DeleteProductById, IdRequest<string>, TypeResponse<bool>>(new() { Id = id});
 
         Assert.AreEqual(HttpStatusCode.OK, respDELETE?.StatusCode);
 

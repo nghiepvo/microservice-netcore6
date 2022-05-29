@@ -1,6 +1,7 @@
 using Basket.API.Applications.Services;
-using Basket.API.Commons;
 using Basket.API.Domian;
+using Common.Libraries.ViewModels;
+using Commons.Libraries.Commons;
 
 namespace Basket.API.EndPoints.Baskets;
 public class GetBasket : Endpoint<TypeRequest<string>, ShoppingCart>

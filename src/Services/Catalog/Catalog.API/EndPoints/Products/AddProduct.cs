@@ -1,7 +1,6 @@
+using Commons.Libraries.Commons;
 using Catalog.API.Applications.Services;
-using Catalog.API.Commons;
 using Catalog.API.Domain;
-
 namespace Catalog.API.EndPoints.Products;
 
 /// <summary>

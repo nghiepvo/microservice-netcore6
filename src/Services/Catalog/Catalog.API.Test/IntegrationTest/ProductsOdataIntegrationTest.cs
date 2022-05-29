@@ -1,14 +1,33 @@
 using System.Net;
+using Catalog.API.Applications;
 using Catalog.API.Domain;
+using Catalog.API.EndPoints;
+using Catalog.API.EndPoints.Controllers;
+using Catalog.API.Infrastructures.MongoDB;
 using Catalog.API.Infrastructures.MongoDB.Migrations;
-using Catalog.API.Test.Extensions;
-using Catalog.API.Test.Extensions.Odata;
+using Common.LibrariesTest.Odata;
+using Common.LibrariesTest.Setups;
+using Microsoft.AspNetCore.OData;
+using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
 namespace Catalog.API.Test.IntegrationTest;
-public class ProductsOdataIntegrationTest: SetupXUnit
+
+public class ConfigStartup : TestStartupBase
 {
-    public ProductsOdataIntegrationTest(WebODataTestFixture<Startup> fixture) : base(fixture)
+    public override void ConfigureServices(IServiceCollection services)
+    {
+        services.ConfigureControllers(typeof(ProductsController));
+        services.AddApplication();
+        services.AddMongoDB();
+        services.AddControllers().AddOData(options => options.AddRouteComponents("odata", ModelBuilder.GetEdmModel()).EnableQueryFeatures(5));
+    }
+}
+
+
+public class ProductsOdataIntegrationTest: SetupOdataTest<ConfigStartup>
+{
+    public ProductsOdataIntegrationTest(WebODataTestFixture<ConfigStartup> fixture) : base(fixture)
     {
     }
 
@@ -30,5 +49,4 @@ public class ProductsOdataIntegrationTest: SetupXUnit
 
         Assert.Equal(ProductMigrationData.Products.First().ID, resp?.FirstOrDefault()?.ID);
     }
-
 }
