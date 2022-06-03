@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Net;
 using Catalog.API.Domain;
 using Catalog.API.EndPoints.Products;

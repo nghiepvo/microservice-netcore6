@@ -28,13 +28,14 @@ public class AuthenticationEndPoint : Endpoint<AuthenticationRequest, Authentica
 
             await SendAsync
             (
-                JWTBearerGenerate.CreateTokenWithFullPermisions(_configuration[EndPointConfig.TokenKey], req.Username, expireAt),
+                JwtBearerGenerate.CreateTokenWithFullPermisions(_configuration[EndPointConfig.TokenKey], req.Username, expireAt),
                 cancellation: ct
             );
         }
         else
         {
-            ThrowError(string.Format(_configuration[MessagesConfig.Fail], Route));
+            AddError(string.Format(_configuration[MessagesConfig.Fail], Route));
+            await SendErrorsAsync(cancellation: ct);
         }
     }
 }

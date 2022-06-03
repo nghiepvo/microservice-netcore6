@@ -8,7 +8,7 @@ internal static class CacheSettings
     public const string ConnectionString = $"{nameof(CacheSettings)}:{nameof(ConnectionString)}";
 }
 
-public static class CACHE
+public static class Cache
 {
     public static RedisConnectionProvider Provider { get; private set; } = default!;
     public static IRedisConnection Context  => Provider.Connection;

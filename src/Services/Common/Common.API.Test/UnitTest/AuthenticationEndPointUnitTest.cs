@@ -55,6 +55,12 @@ public class AuthenticationEndPointUnitTest
         var ep = Factory.Create<AuthenticationEndPoint>(fakeConfig);
 
         //assert
-        await Assert.ThrowsExceptionAsync<ValidationFailureException>(async () => { await ep.HandleAsync(req, default); });
+        //act
+        await ep.HandleAsync(req, default);
+        var rsp = ep.Response;
+
+        //assert
+        Assert.IsTrue(ep.ValidationFailed);
+        Assert.IsTrue(ep.ValidationFailures.Any());
     }
 }

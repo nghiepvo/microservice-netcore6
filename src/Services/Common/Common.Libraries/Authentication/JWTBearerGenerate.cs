@@ -3,7 +3,7 @@ using FastEndpoints.Security;
 
 namespace Common.Libraries.Authentication;
 
-public static class JWTBearerGenerate
+public static class JwtBearerGenerate
 {
     public static AuthenticationResponse CreateToken(string signingKey, DateTime expireAt, (string claimType, string claimValue)[] claims, string[] permissions)
     {

@@ -1,6 +1,6 @@
 using Basket.API.Domian;
 using Redis.OM;
-using static Basket.API.Infrastructures.Redis.CACHE;
+using static Basket.API.Infrastructures.Redis.Cache;
 
 namespace Basket.API.Applications.Services;
 

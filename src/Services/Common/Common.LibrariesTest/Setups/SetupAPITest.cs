@@ -26,7 +26,7 @@ public class SetupAPITest<T> where T : class
             throw new ArgumentException($"The {nameof(IConfiguration)} doesn't loaded.");
         }
 
-        AuthInfo = JWTBearerGenerate.CreateTokenWithFullPermisions(configuration[EndPointConfig.TokenKey], configuration[EndPointConfig.Username], DateTime.Now.AddDays(1));
+        AuthInfo = JwtBearerGenerate.CreateTokenWithFullPermisions(configuration[EndPointConfig.TokenKey], configuration[EndPointConfig.Username], DateTime.Now.AddDays(1));
 
         Client = _factory.WithWebHostBuilder(b => b.ConfigureAppConfiguration((context, config) =>
         {
