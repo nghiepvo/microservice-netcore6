@@ -4,7 +4,7 @@ using Common.Libraries.EndPoints;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 
-namespace Common.LibrariesTest.Setups;
+namespace Common.Libraries.Test.Setups;
 public class SetupAPITest<T> where T : class
 {
     private const string AppSettingFile = "appsettings.Test.json";

@@ -1,15 +1,15 @@
 using System.Net;
-using Catalog.API.Domain;
-using Catalog.API.EndPoints.Products;
-using Catalog.API.Extensions;
-using Catalog.API.Infrastructures.MongoDB.Migrations;
+using Common.Libraries.API.Domain;
+using Common.Libraries.API.EndPoints.Products;
+using Common.Libraries.API.Extensions;
+using Common.Libraries.API.Infrastructures.MongoDB.Migrations;
 using Common.Libraries.ViewModels;
-using Common.LibrariesTest.Setups;
+using Common.Libraries.Test.Setups;
 using FastEndpoints;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Catalog.API.Test.IntegrationTest;
+namespace Common.Libraries.API.Test.IntegrationTest;
 
 [TestClass]
 public class ProductIntegrationTest

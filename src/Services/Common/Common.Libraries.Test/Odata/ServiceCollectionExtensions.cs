@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Common.LibrariesTest.Odata;
+namespace Common.Libraries.Test.Odata;
 
 /// <summary>
 /// Extension for <see cref="IServiceCollection"/>.

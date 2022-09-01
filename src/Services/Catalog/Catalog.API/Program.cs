@@ -1,67 +1,23 @@
 global using FastEndpoints;
-global using FastEndpoints.Security;
-using FastEndpoints.Swagger;
-
-using Catalog.API.Infrastructures.MongoDB;
-using Catalog.API.Applications;
-using Catalog.API.EndPoints;
+using Common.Libraries.API.Infrastructures.MongoDB;
+using Common.Libraries.API.Applications;
+using Common.Libraries.API.EndPoints;
 using Microsoft.AspNetCore.OData;
-using Catalog.API.Infrastructures.Nswag;
-using Common.Libraries.EndPoints;
-
-const string APITitle = "Catalog API";
+using Common.Libraries.Configs;
 
 var builder = WebApplication.CreateBuilder();
 
-builder.Services.AddFastEndpoints();
-builder.Services.AddAuthenticationJWTBearer(builder.Configuration[EndPointConfig.TokenKey]);
-builder.Services.AddSwaggerDoc(settings =>
-{
-    settings.DocumentName = EndPointConfig.Version2Str;
-    settings.Title = APITitle;
-    settings.Version = EndPointConfig.Version2Str;
-    settings.AddAuthController();
-    settings.OperationProcessors.Add(new AddOdataQuery());
-}, maxEndpointVersion: EndPointConfig.Version2, addJWTBearerAuth: false)
-.AddSwaggerDoc(settings =>
-{
-    settings.DocumentName = EndPointConfig.Version1Str;
-    settings.Title = APITitle;
-    settings.Version = EndPointConfig.Version1Str;
-    settings.AddAuthController();
-    settings.OperationProcessors.Add(new AddOdataQuery());
-}, maxEndpointVersion: EndPointConfig.Version1, addJWTBearerAuth: false);
-
-builder.Services.AddApplication();
-builder.Services.AddControllers().AddOData(opt => opt.EnableQueryFeatures(5).AddRouteComponents("odata", ModelBuilder.GetEdmModel()));
+builder.DefaultBuilder("Catalog API", moreconfig => {
+    moreconfig.Services.AddApplication();
+    moreconfig.Services.AddControllers().AddOData(opt => opt.EnableQueryFeatures(5).AddRouteComponents("odata", ModelBuilder.GetEdmModel()));
+});
 
 var app = builder.Build();
 
-app.UseDefaultExceptionHandler();
-
-app.UseRouting();
-
-app.UseAuthentication();
-app.UseAuthorization();
-app.MapControllers().RequireAuthorization();
-
-app.UseFastEndpoints(config =>
-{
-    config.RoutingOptions = o => o.Prefix = EndPointConfig.APIPrefix;
-    config.VersioningOptions = o =>
-    {
-        o.Prefix = EndPointConfig.VersionPrefix;
-        o.SuffixedVersion = false;
-    };
+app.DefaultApplication(async moreConfig => {
+    await app.UseMongoDB();
+}, authController => {
+    authController.MapControllers().RequireAuthorization();
 });
-
-app.UseOpenApi();
-
-app.UseSwaggerUi3(c =>
-{
-    c.ConfigureDefaults();
-});
-
-await app.UseMongoDB();
 
 app.Run();

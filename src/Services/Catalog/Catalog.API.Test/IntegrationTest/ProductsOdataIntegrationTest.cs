@@ -1,17 +1,17 @@
 using System.Net;
-using Catalog.API.Applications;
-using Catalog.API.Domain;
-using Catalog.API.EndPoints;
-using Catalog.API.EndPoints.Controllers;
-using Catalog.API.Infrastructures.MongoDB;
-using Catalog.API.Infrastructures.MongoDB.Migrations;
-using Common.LibrariesTest.Odata;
-using Common.LibrariesTest.Setups;
+using Common.Libraries.API.Applications;
+using Common.Libraries.API.Domain;
+using Common.Libraries.API.EndPoints;
+using Common.Libraries.API.EndPoints.Controllers;
+using Common.Libraries.API.Infrastructures.MongoDB;
+using Common.Libraries.API.Infrastructures.MongoDB.Migrations;
+using Common.Libraries.Test.Odata;
+using Common.Libraries.Test.Setups;
 using Microsoft.AspNetCore.OData;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace Catalog.API.Test.IntegrationTest;
+namespace Common.Libraries.API.Test.IntegrationTest;
 
 public class ConfigStartup : TestStartupBase
 {

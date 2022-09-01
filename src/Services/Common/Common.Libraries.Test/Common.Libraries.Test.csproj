@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
+   <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -26,13 +26,6 @@
         </PackageReference>
     </ItemGroup>
     <ItemGroup>
-        <None Update="appsettings.Test.json">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-    </ItemGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\Basket.API\Basket.API.csproj" />
-        <ProjectReference Include="..\..\Common\Common.Libraries\Common.Libraries.csproj" />
-        <ProjectReference Include="..\..\Common\Common.Libraries.Test\Common.Libraries.Test.csproj" />
+        <ProjectReference Include="..\Common.Libraries\Common.Libraries.csproj" />
     </ItemGroup>
 </Project>

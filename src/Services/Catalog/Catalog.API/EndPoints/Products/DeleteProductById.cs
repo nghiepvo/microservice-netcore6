@@ -1,8 +1,8 @@
-using Catalog.API.Applications.Services;
+using Common.Libraries.API.Applications.Services;
 using Common.Libraries.ViewModels;
 using Commons.Libraries.Commons;
 
-namespace Catalog.API.EndPoints.Products;
+namespace Common.Libraries.API.EndPoints.Products;
 
 public class DeleteProductById : Endpoint<IdRequest<string>, TypeResponse<bool>>
 {

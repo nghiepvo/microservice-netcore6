@@ -1,7 +1,7 @@
 using Commons.Libraries.Commons;
-using Catalog.API.Applications.Services;
-using Catalog.API.Domain;
-namespace Catalog.API.EndPoints.Products;
+using Common.Libraries.API.Applications.Services;
+using Common.Libraries.API.Domain;
+namespace Common.Libraries.API.EndPoints.Products;
 
 /// <summary>
 /// Add a Product

@@ -6,7 +6,7 @@ using NSwag.Generation.AspNetCore;
 using NSwag.Generation.Processors;
 using NSwag.Generation.Processors.Contexts;
 
-namespace Catalog.API.Infrastructures.Nswag;
+namespace Common.Libraries.Nswag;
 [ExcludeFromCodeCoverage]
 public class AddOdataQuery: IOperationProcessor
 {

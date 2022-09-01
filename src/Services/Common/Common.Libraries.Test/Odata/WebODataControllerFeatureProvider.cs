@@ -4,7 +4,7 @@ using System.Reflection;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Mvc.Controllers;
 
-namespace Common.LibrariesTest.Odata;
+namespace Common.Libraries.Test.Odata;
 
 /// <summary>
 /// Controller feature provider

@@ -1,7 +1,7 @@
 using System.Net;
 using Common.API.EndPoints.Authentication;
 using Common.Libraries.Authentication;
-using Common.LibrariesTest.Setups;
+using Common.Libraries.Test.Setups;
 using FastEndpoints;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

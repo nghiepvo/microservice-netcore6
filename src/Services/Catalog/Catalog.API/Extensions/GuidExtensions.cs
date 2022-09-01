@@ -1,6 +1,6 @@
 using MongoDB.Bson;
 
-namespace Catalog.API.Extensions;
+namespace Common.Libraries.API.Extensions;
 
 public static class GuidExtensions
 {

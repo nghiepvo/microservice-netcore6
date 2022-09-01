@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Common.LibrariesTest.Odata;
+namespace Common.Libraries.Test.Odata;
 
 /// <summary>
 /// The startup base class

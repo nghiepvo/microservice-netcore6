@@ -3,7 +3,7 @@ using MongoDB.Driver;
 using MongoDB.Driver.Core.Events;
 using MongoDB.Entities;
 
-namespace Catalog.API.Infrastructures.MongoDB;
+namespace Common.Libraries.API.Infrastructures.MongoDB;
 
 internal static class DatabaseSettings
 {

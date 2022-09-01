@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
-namespace Common.LibrariesTest.Odata;
+namespace Common.Libraries.Test.Odata;
 
 public class WebODataTestFixture<TStartup> : WebApplicationFactory<TStartup> where TStartup : class
 {

@@ -1,6 +1,6 @@
-using Catalog.API.Domain;
+using Common.Libraries.API.Domain;
 
-namespace Catalog.API.Infrastructures.MongoDB.Migrations;
+namespace Common.Libraries.API.Infrastructures.MongoDB.Migrations;
 
 public static class ProductMigrationData
 {

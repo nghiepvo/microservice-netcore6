@@ -1,7 +1,7 @@
-using Catalog.API.Domain;
+using Common.Libraries.API.Domain;
 using MongoDB.Entities;
 
-namespace Catalog.API.Applications.Services;
+namespace Common.Libraries.API.Applications.Services;
 
 public interface IProductService
 {

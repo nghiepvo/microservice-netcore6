@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace Common.LibrariesTest.Odata;
+namespace Common.Libraries.Test.Odata;
 
 public abstract class WebODataTestBase<TStartup> : IClassFixture<WebODataTestFixture<TStartup>> where TStartup : class
 {

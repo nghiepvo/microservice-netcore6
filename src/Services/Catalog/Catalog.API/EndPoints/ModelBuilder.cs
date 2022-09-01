@@ -1,8 +1,8 @@
-using Catalog.API.Domain;
+using Common.Libraries.API.Domain;
 using Microsoft.OData.Edm;
 using Microsoft.OData.ModelBuilder;
 
-namespace Catalog.API.EndPoints;
+namespace Common.Libraries.API.EndPoints;
 
 public static class ModelBuilder
 {

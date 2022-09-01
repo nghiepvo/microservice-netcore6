@@ -1,6 +1,6 @@
-using Catalog.API.Applications.Services;
+using Common.Libraries.API.Applications.Services;
 
-namespace Catalog.API.Applications;
+namespace Common.Libraries.API.Applications;
 
 public static class DependencyInjection
 {

@@ -1,6 +1,6 @@
 using MongoDB.Entities;
 
-namespace Catalog.API.Domain;
+namespace Common.Libraries.API.Domain;
 
 [Collection("Products")]
 public class Product : Entity

@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -9,5 +8,6 @@
         <PackageReference Include="FastEndpoints" Version="4.0.0" />
         <PackageReference Include="FastEndpoints.Security" Version="4.0.0" />
         <PackageReference Include="FastEndpoints.Swagger" Version="4.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OData" Version="8.0.10" />
     </ItemGroup>
 </Project>

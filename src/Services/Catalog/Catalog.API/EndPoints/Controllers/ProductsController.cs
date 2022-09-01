@@ -1,9 +1,9 @@
-using Catalog.API.Applications.Services;
-using Catalog.API.Domain;
+using Common.Libraries.API.Applications.Services;
+using Common.Libraries.API.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
 
-namespace Catalog.API.EndPoints.Controllers;
+namespace Common.Libraries.API.EndPoints.Controllers;
 
 public class ProductsController : ControllerBase
 {

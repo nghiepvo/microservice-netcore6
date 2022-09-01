@@ -1,6 +1,6 @@
 using Common.Libraries.ViewModels;
 
-namespace Catalog.API.EndPoints.Products;
+namespace Common.Libraries.API.EndPoints.Products;
 public static class ProductRoutes
 {
     private const string Product = "Product";

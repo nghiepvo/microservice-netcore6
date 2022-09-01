@@ -1,9 +1,9 @@
-using Catalog.API.Applications.Services;
-using Catalog.API.Domain;
+using Common.Libraries.API.Applications.Services;
+using Common.Libraries.API.Domain;
 using Common.Libraries.ViewModels;
 using Commons.Libraries.Commons;
 
-namespace Catalog.API.EndPoints.Products;
+namespace Common.Libraries.API.EndPoints.Products;
 
 public class GetProducts : Endpoint<EmptyRequest, ListResponse<Product>>
 {

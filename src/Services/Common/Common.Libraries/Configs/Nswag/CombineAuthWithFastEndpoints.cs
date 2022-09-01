@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using FastEndpoints;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NSwag;
@@ -8,7 +9,7 @@ using NSwag.Generation.Processors;
 using NSwag.Generation.Processors.Contexts;
 using NSwag.Generation.Processors.Security;
 
-namespace Catalog.API.Infrastructures.Nswag;
+namespace Common.Libraries.Nswag;
 
 [ExcludeFromCodeCoverage]
 public static class CombineAuthWithFastEndpoints
