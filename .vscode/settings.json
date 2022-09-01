@@ -3,6 +3,6 @@
         "**/obj/": true,
         "**/bin/": true
     },
-    "dotnet-test-explorer.testProjectPath": "**/*Test.csproj",
+    "dotnet-test-explorer.testProjectPath": "**/**.Test.csproj",
     "coverage-gutters.showLineCoverage": true
 }
